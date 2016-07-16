@@ -3,26 +3,28 @@ var pug = require('pug');
 var querystring = require('querystring');
 var path = require('path');
 var app = express();
+var morgan = require('morgan');
 var bodyParser = require('body-parser');
 
 var Gallery = require('./Gallery');
 
-var pics = './data/gallery.json';
-
+app.use(morgan('dev'));
 
 app.set('views', path.resolve(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.use(bodyParser.json());
 
+
 app.get('/', function(req, res){
-
-  res.render('index');
-
+  var galleryJSON = require('./data/gallery');
+  res.render('index', {galleries: galleryJSON});
 });
 
 // app.get('/gallery/:id', function(req, res){
   app.get('/gallery/:id(\\d+)/', function (req, res){
+    // var ids = req.params.id;
+    res.render(req.params.id);
 
     // res.send('gallery id: ' + req.params.id);
 });
