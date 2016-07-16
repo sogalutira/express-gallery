@@ -6,15 +6,15 @@ var app = express();
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 
+var locals = bodyParser.urlencoded({ extended: false });
+
+
 var Gallery = require('./Gallery');
 
 app.use(morgan('dev'));
 
 app.set('views', path.resolve(__dirname, 'views'));
 app.set('view engine', 'pug');
-
-app.use(bodyParser.json());
-
 
 app.get('/', function(req, res){
   var galleryJSON = require('./data/gallery');
@@ -34,16 +34,16 @@ app.get('/gallery/new', function(req, res){
   // res.send('New gallery');
 });
 
-app.post('/gallery', function(req, res){
-  req.on('data', function(data){
-    var locals = querystring.parse(data.toString());
-    Gallery.create(locals, function (err, result){
+app.post('/gallery', locals, function(req, res){
+  // req.on('data', function(data){
+    // var locals = querystring.parse(data.toString());
+    Gallery.create(req.body, function (err, result){
       if (err){
         throw err;
       }
-      res.render('gallery', locals);
+      res.render('gallery', req.body);
     });
-  });
+  // }); // end req.on data
 });
 
 
