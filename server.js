@@ -8,7 +8,6 @@ var bodyParser = require('body-parser');
 
 var locals = bodyParser.urlencoded({ extended: false });
 
-
 var Gallery = require('./Gallery');
 
 app.use(morgan('dev'));
@@ -23,9 +22,13 @@ app.get('/', function(req, res){
 
 // app.get('/gallery/:id', function(req, res){
   app.get('/gallery/:id(\\d+)/', function (req, res){
-    // var ids = req.params.id;
-    res.render(req.params.id);
+    var idObj = [];
+    console.log(req.params.id);
+    var galleryJSON = require('./data/gallery');
+    var id = req.params.id;
+    var ids = idObj.push(id);
 
+    res.render('singlegallery', {galleries: galleryJSON, ID: ids});
     // res.send('gallery id: ' + req.params.id);
 });
 
@@ -37,7 +40,9 @@ app.get('/gallery/new', function(req, res){
 app.post('/gallery', locals, function(req, res){
   // req.on('data', function(data){
     // var locals = querystring.parse(data.toString());
+
     Gallery.create(req.body, function (err, result){
+      console.log(req.body);
       if (err){
         throw err;
       }
