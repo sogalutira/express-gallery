@@ -4,7 +4,6 @@ head
   meta(charset="utf-8")
   title Express Gallery
 body
-  for galleryData in galleries
-    img(src = galleryData.url)
-    p Uploaded by: #{galleryData.author}
-    p Description: #{galleryData.description}
+  img(src = gallery.url)
+  p Uploaded by: #{gallery.author}
+  p Description: #{gallery.description}
