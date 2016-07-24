@@ -6,12 +6,14 @@ var app = express();
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 
+var db = require('./models');
+
 var locals = bodyParser.urlencoded({ extended: false });
 
 var Gallery = require('./Gallery');
 
 app.use(morgan('dev'));
-
+app.use(bodyParser.json());
 app.set('views', path.resolve(__dirname, 'views'));
 app.set('view engine', 'pug');
 
@@ -23,12 +25,14 @@ app.get('/', function(req, res){
 // app.get('/gallery/:id', function(req, res){
   app.get('/gallery/:id(\\d+)/', function (req, res){
     var idObj = [];
-    console.log(req.params.id);
     var galleryJSON = require('./data/gallery');
     var id = req.params.id;
-    var ids = idObj.push(id);
+    console.log('gallery stuff: ', galleryJSON[id]);
+    var theIds = idObj.push(galleryJSON[id]);
+    console.log('line 29');
+    console.log(theIds);
 
-    res.render('singlegallery', {galleries: galleryJSON, ID: ids});
+    res.render('singlegallery', {galleries: theIds});
     // res.send('gallery id: ' + req.params.id);
 });
 
@@ -70,4 +74,5 @@ var server = app.listen(8080, function(){
   var host = server.address().address;
   var port = server.address().port;
   console.log('Listening on: ', host, port);
+  db.sequelize.sync();
 });
