@@ -7,20 +7,32 @@ var morgan = require('morgan');
 var bodyParser = require('body-parser');
 
 var db = require('./models');
+var Gallery = db.Gallery;
 
 var locals = bodyParser.urlencoded({ extended: false });
 
-var Gallery = require('./Gallery');
+// var Gallery = require('./Gallery');
 
 app.use(morgan('dev'));
+app.use(locals);
 app.use(bodyParser.json());
 app.set('views', path.resolve(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+// app.get('/', function(req, res){
+//   var galleryJSON = require('./data/gallery');
+//   res.render('index', {galleries: galleryJSON});
+// });
+
 app.get('/', function(req, res){
-  var galleryJSON = require('./data/gallery');
-  res.render('index', {galleries: galleryJSON});
+
+    Gallery.findAll()
+  .then(function (gallery){
+    console.log(gallery);
+    res.render('index', {galleries: gallery});
+  });
 });
+
 
 // app.get('/gallery/:id', function(req, res){
   app.get('/gallery/:id(\\d+)/', function (req, res){
@@ -41,21 +53,23 @@ app.get('/gallery/new', function(req, res){
   // res.send('New gallery');
 });
 
-app.post('/gallery', locals, function(req, res){
-  // req.on('data', function(data){
-    // var locals = querystring.parse(data.toString());
+// app.post('/gallery', locals, function(req, res){
+//     Gallery.create(req.body, function (err, result){
+//       console.log(req.body);
+//       if (err){
+//         throw err;
+//       }
+//       res.render('gallery', req.body);
+//     });
+// });
 
-    Gallery.create(req.body, function (err, result){
-      console.log(req.body);
-      if (err){
-        throw err;
-      }
-      res.render('gallery', req.body);
-    });
-  // }); // end req.on data
+app.post('/gallery', function(req, res){
+    console.log(req.body.author, req.body.url, req.body.description);
+    Gallery.create({ author: req.body.author, url: req.body.url, description: req.body.description })
+  .then(function (gallery) {
+    res.render('gallery', gallery);
+  });
 });
-
-
 
 app.get('/gallery/:id/edit', function(req, res){
 

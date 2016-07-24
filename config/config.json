@@ -2,7 +2,7 @@
   "development": {
     "username": "Sheena",
     "password": null,
-    "database": "express_gallery",
+    "database": "expressgallery",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
