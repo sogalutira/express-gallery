@@ -52,7 +52,6 @@ app.get('/gallery/:id', function(req, res){
   })
   .then(function (gallery){
     res.render('singlegallery', {gallery: gallery});
-    // res.json(gallery);
   });
 });
 
@@ -72,10 +71,10 @@ app.get('/gallery/new', function(req, res){
 // });
 
 app.post('/gallery', function(req, res){
-    Gallery.create({ author: req.body.author, url: req.body.url, description: req.body.description })
-  .then(function (gallery) {
-    res.render('gallery', gallery);
-  });
+  Gallery.create({ author: req.body.author, url: req.body.url, description: req.body.description })
+    .then(function (gallery) {
+      res.render('gallery', gallery);
+    });
 });
 
 app.get('/gallery/:id/edit', function(req, res){
@@ -83,7 +82,11 @@ app.get('/gallery/:id/edit', function(req, res){
 });
 
 app.put('/gallery/:id/', function(req, res){
-
+  Gallery.update( {author: req.body.author, url: req.body.url, description: req.body.description}, {where: { id: req.params.id}})
+    .then(function (update){
+      console.log('update: ', update);
+      res.render('singlegallery', {gallery: update});
+    });
 });
 
 app.delete('/gallery/:id', function (req, res){
