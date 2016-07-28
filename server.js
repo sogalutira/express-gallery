@@ -78,19 +78,21 @@ app.post('/gallery', function(req, res){
 });
 
 app.get('/gallery/:id/edit', function(req, res){
-
+    Gallery.update( {author: req.body.author, url: req.body.url, description: req.body.description}, {where: { id: req.params.id}} )
+    .then(function (edit){
+      res.render('gallery', {gallery: edit});
+    });
 });
 
 app.put('/gallery/:id/', function(req, res){
-  Gallery.update( {author: req.body.author, url: req.body.url, description: req.body.description}, {where: { id: req.params.id}})
+  Gallery.update( {author: req.body.author, url: req.body.url, description: req.body.description}, {where: { id: req.params.id}} )
     .then(function (update){
-      console.log('update: ', update);
       res.render('singlegallery', {gallery: update});
     });
 });
 
 app.delete('/gallery/:id', function (req, res){
-
+  Gallery.destroy({where: { id: req.params.id}, truncate: true});
 });
 
 
