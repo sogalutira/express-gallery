@@ -8,7 +8,14 @@ body
   p Uploaded by: #{gallery.author}
   p Description: #{gallery.description}
   p
-  button(type="submit" onclick='redirect()') Edit
+  button(type="submit" onclick='editRedirect()') Edit
+
+  form(method="POST" action="/gallery/" + gallery.id enctype="application/x-www-form-urlencoded")
+    input(type="hidden" name="_method" value="DELETE")
+    p
+    button(type="submit") Delete
 script.
-  function redirect(){
+  function editRedirect(){
     window.location="#{gallery.id}/edit"}
+  //- function deleteRedirect(){
+  //-   window.location="#{gallery.id}/delete"}

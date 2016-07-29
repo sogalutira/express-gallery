@@ -114,9 +114,15 @@ app.put('/gallery/:id', function(req, res){
 });
 
 app.delete('/gallery/:id', function (req, res){
-  Gallery.destroy({where: { id: req.params.id}, truncate: true});
+  Gallery.destroy({
+    where: {
+      id: req.params.id
+    },
+    truncate: true})
+    .then(function(Gallery){
+      res.redirect('/');
+    });
 });
-
 
 var server = app.listen(8080, function(){
   var host = server.address().address;
