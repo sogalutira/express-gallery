@@ -7,3 +7,8 @@ body
   img(src = gallery.url)
   p Uploaded by: #{gallery.author}
   p Description: #{gallery.description}
+  p
+  button(type="submit" onclick='redirect()') Edit
+script.
+  function redirect(){
+    window.location="#{gallery.id}/edit"}

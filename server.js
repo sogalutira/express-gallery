@@ -78,9 +78,15 @@ app.post('/gallery', function(req, res){
 });
 
 app.get('/gallery/:id/edit', function(req, res){
-    Gallery.update( {author: req.body.author, url: req.body.url, description: req.body.description}, {where: { id: req.params.id}} )
+    Gallery.findOne({
+      where: { id: req.params.id}
+    })
+  //   .then(function (gallery){
+  //   res.render('editgallery', {gallery: gallery});
+  // });
+    // Gallery.update( {author: req.body.author, url: req.body.url, description: req.body.description}, {where: { id: req.params.id}} )
     .then(function (edit){
-      res.render('gallery', {gallery: edit});
+      res.render('editgallery', {gallery: edit});
     });
 });
 
@@ -88,6 +94,7 @@ app.put('/gallery/:id/', function(req, res){
   Gallery.update( {author: req.body.author, url: req.body.url, description: req.body.description}, {where: { id: req.params.id}} )
     .then(function (update){
       res.render('singlegallery', {gallery: update});
+      // res.redirect('singlegallery');
     });
 });
 
