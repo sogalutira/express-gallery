@@ -6,11 +6,11 @@ html(lang="en")
   body
     p New photo
 
-    form(name="input", action="/gallery", method="get")
+    form(name="input", action="/gallery", method="POST")
       p Author
       input(type="Text", name="author")
       p URL
-      input(type="Text", name="link")
+      input(type="Text", name="url")
       p Description
       input(type="TextArea", name="description")
       p
