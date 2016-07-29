@@ -81,7 +81,9 @@ app.put('/gallery/:id', function(req, res){
     }} )
   .then(function(){
      return Gallery.findOne({
-      where: { id: req.params.id}
+      where: {
+        id: req.params.id
+      }
     });
   })
   .then(function (update){
