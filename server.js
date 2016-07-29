@@ -5,6 +5,7 @@ var path = require('path');
 var app = express();
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
 
 var db = require('./models');
 var Gallery = db.Gallery;
@@ -16,6 +17,15 @@ var locals = bodyParser.urlencoded({ extended: false });
 app.use(morgan('dev'));
 app.use(locals);
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
+app.use(methodOverride(function(req, res){
+  if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+    // look in urlencoded POST bodies and delete it
+    var method = req.body._method;
+    delete req.body._method;
+    return method;
+  }
+}));
 app.set('views', path.resolve(__dirname, 'views'));
 app.set('view engine', 'pug');
 
@@ -90,7 +100,8 @@ app.get('/gallery/:id/edit', function(req, res){
     });
 });
 
-app.put('/gallery/:id/', function(req, res){
+app.put('/gallery/:id', function(req, res){
+  console.log('put request');
   Gallery.update( {author: req.body.author, url: req.body.url, description: req.body.description}, {where: { id: req.params.id}} )
     .then(function (update){
       res.render('singlegallery', {gallery: update});

@@ -5,7 +5,8 @@ head
   title Express Gallery
 body
   p Edit Gallery
-  form(action="/gallery" method="post")
+  form(method="POST" action="/gallery/" + gallery.id enctype="application/x-www-form-urlencoded")
+    input(type="hidden" name="_method" value="PUT")
     p Author
     input(type="Text", name="author" value=gallery.author)
     p URL
@@ -13,5 +14,4 @@ body
     p Description
     input(type="TextArea", name="description" value=gallery.description)
     p
-    input(type="hidden", name="_method" value="put")
     button(type="submit") Submit
