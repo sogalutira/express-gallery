@@ -101,8 +101,12 @@ app.get('/gallery/:id/edit', function(req, res){
 });
 
 app.put('/gallery/:id', function(req, res){
-  console.log('put request');
   Gallery.update( {author: req.body.author, url: req.body.url, description: req.body.description}, {where: { id: req.params.id}} )
+    .then(function(){
+       return Gallery.findOne({
+        where: { id: req.params.id}
+        });
+    })
     .then(function (update){
       res.render('singlegallery', {gallery: update});
       // res.redirect('singlegallery');
