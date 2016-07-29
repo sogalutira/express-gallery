@@ -8,7 +8,13 @@ body
   h1 Welcome to the gallery!
   each galleryData in Gallery
     img(src = galleryData.url)
+    input(type="hidden" onclick = 'redirect()')
     p Uploaded by: #{galleryData.author}
     p Description: #{galleryData.description}
+
+script.
+  function redirect(){
+    window.location="/gallery/" + gallery.id
+  }
 
 
