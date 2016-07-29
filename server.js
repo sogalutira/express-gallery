@@ -30,9 +30,9 @@ app.set('views', path.resolve(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.get('/', function(req, res){
-    Gallery.findAll()
-  .then(function (gallery){
-    res.render('index', {galleries: gallery});
+  Gallery.findAll()
+  .then(function (Gallery){
+    res.render('index', {Gallery: Gallery});
   });
 });
 
@@ -96,8 +96,8 @@ app.delete('/gallery/:id', function (req, res){
   Gallery.destroy({
     where: {
       id: req.params.id
-    },
-    truncate: true})
+    }
+  })
   .then(function(Gallery){
     res.redirect('/');
   });
