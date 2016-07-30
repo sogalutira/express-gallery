@@ -12,12 +12,11 @@ var Gallery = db.Gallery;
 
 var locals = bodyParser.urlencoded({ extended: false });
 
-// var Gallery = require('./Gallery');
-
 app.use(morgan('dev'));
 app.use(locals);
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
+app.use(express.static(path.resolve(__dirname, "public")));
+// app.use(bodyParser.urlencoded());
 app.use(methodOverride(function(req, res){
   if (req.body && typeof req.body === 'object' && '_method' in req.body) {
     // look in urlencoded POST bodies and delete it
@@ -38,7 +37,6 @@ app.get('/', function(req, res){
 
 app.get('/gallery/new', function(req, res){
   res.render('gallery');
-  // res.send('New gallery');
 });
 
 app.get('/gallery/:id', function(req, res){

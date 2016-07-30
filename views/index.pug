@@ -1,37 +1,38 @@
-<!DOCTYPE html>
+doctype html
 html(lang="en")
-head
-  meta(charset="utf-8")
-  title Express Gallery
-body
-  div(class="mainContent")
-    hr(class="dotted")
-    div(class="topBar")
-      div(class="headerDiv")
-        h1(class="header1") _ARCHITEKT
-      div(class="headerPDiv")
-        p(class="headerP") Welcome to the gallery! blah blah blah
-    div(class="mainImg")
-      img(src=Gallery[1].url)
-    hr
-       //- - var i = 0
-    div(class="row2")
-      -var pics = 0
-      while pics < 4
-        div
-          img(src=Gallery[pics].url)
-          p #{Gallery[pics].author}
-          p #{Gallery[pics].description}
-          -pics++
+  head
+    meta(charset="utf-8")
+    title Express Gallery
+    link(rel="stylesheet" type="text/css" href="/styles/styles.css")
+  body
+    div(class="mainContent")
+      hr(class="dotted")
+      div(class="topBar")
+        div(class="headerDiv")
+          h1(class="header1") _ARCHITEKT
+        div(class="headerPDiv")
+          p(class="headerP") Welcome to our online portfolio, we are small group of passionate designers and architects, looking to change and create amazing digital images to inspire others to follow in our innovative steps. Free Architect WordPress Theme
+      div(class="mainImg")
+        img(src=Gallery[1].url)
       hr
-      -var i = 5
-      while i < Gallery.length
-        div
-          img(src=Gallery[i].url)
-          p #{Gallery[i].author}
-          p #{Gallery[i].description}
-          -i++
-      hr
+         //- - var i = 0
+      div(class="row2")
+        -var pics = 0
+        while pics < 4
+          div
+            img(src=Gallery[pics].url)
+            p #{Gallery[pics].author}
+            p #{Gallery[pics].description}
+            -pics++
+        hr
+        -var i = 5
+        while i < Gallery.length
+          div
+            img(src=Gallery[i].url)
+            p #{Gallery[i].author}
+            p #{Gallery[i].description}
+            -i++
+        hr
 
     //-     div=img(src=Gallery[i].url)
     //- each galleryData in Gallery

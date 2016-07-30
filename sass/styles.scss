@@ -1,8 +1,13 @@
-$dark-color : #333333;
+@import "sass/clearfix";
+@import "sass/reset";
+
+$dark-color : #000000;
 
 $small: "(min-width: 100px) and (max-width: 600px)";
 $medium: "(min-width: 600px) and (max-width: 900px)";
 $large: "(min-width: 900px)";
+
+$arial-font: Arial, Helvetica, sans-serif;
 
 @mixin small{
   @media #{$small} {
@@ -23,6 +28,19 @@ $large: "(min-width: 900px)";
 }
 
 body {
-  background: $dark-color;
-  border-style: solid;
+  .headerDiv {
+    font-family: $arial-font;
+    font-size: 40px;
+    font-weight: bold;
+    float: left;
+  }
+  .headerPDiv{
+    font-family: $arial-font;
+    font-size: 12px;
+    float: left;
+    width: 350px;
+    border-left: 1px grey;
+    border-style: solid;
+  }
+
 }
