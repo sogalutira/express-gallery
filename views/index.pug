@@ -4,17 +4,43 @@ head
   meta(charset="utf-8")
   title Express Gallery
 body
-  header
-  h1 Welcome to the gallery!
-  each galleryData in Gallery
-    img(src = galleryData.url)
-    input(type="hidden" onclick = 'redirect()')
-    p Uploaded by: #{galleryData.author}
-    p Description: #{galleryData.description}
+  div(class="mainContent")
+    hr(class="dotted")
+    div(class="topBar")
+      div(class="headerDiv")
+        h1(class="header1") _ARCHITEKT
+      div(class="headerPDiv")
+        p(class="headerP") Welcome to the gallery! blah blah blah
+    div(class="mainImg")
+      img(src=Gallery[1].url)
+    hr
+       //- - var i = 0
+    div(class="row2")
+      -var pics = 0
+      while pics < 4
+        div
+          img(src=Gallery[pics].url)
+          p #{Gallery[pics].author}
+          p #{Gallery[pics].description}
+          -pics++
+      hr
+      -var i = 5
+      while i < Gallery.length
+        div
+          img(src=Gallery[i].url)
+          p #{Gallery[i].author}
+          p #{Gallery[i].description}
+          -i++
+      hr
 
-script.
-  function redirect(){
-    window.location="/gallery/" + gallery.id
-  }
+    //-     div=img(src=Gallery[i].url)
+    //- each galleryData in Gallery
+      //- a(href=/gallery + gallery.id)
+        img(src=galleryData.url)
+      //- img(src = Gallery.url)
+      //- p Uploaded by: #{galleryData.author}
+      //- p Description: #{galleryData.description}
 
-
+//- script.
+//-   function redirect(){
+//-     window.location="/gallery/" + gallery.id}

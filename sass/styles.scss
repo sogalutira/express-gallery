@@ -1,5 +1,27 @@
 $dark-color : #333333;
 
+$small: "(min-width: 100px) and (max-width: 600px)";
+$medium: "(min-width: 600px) and (max-width: 900px)";
+$large: "(min-width: 900px)";
+
+@mixin small{
+  @media #{$small} {
+    @content;
+  }
+}
+
+@mixin medium{
+  @media #{$medium} {
+    @content;
+  }
+}
+
+@mixin large{
+  @media #{$large} {
+    @content;
+  }
+}
+
 body {
   background: $dark-color;
   border-style: solid;
