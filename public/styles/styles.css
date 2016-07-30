@@ -64,6 +64,11 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+body hr.dotted {
+  border: 0;
+  border-bottom: 1px dotted #ccc;
+  background: #999; }
+
 body .headerDiv {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 40px;
@@ -77,3 +82,8 @@ body .headerPDiv {
   width: 350px;
   border-left: 1px grey;
   border-style: solid; }
+
+body hr.line {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.75), transparent); }

@@ -19,6 +19,8 @@
   "homepage": "https://github.com/sogalutira/express-gallery#readme",
   "dependencies": {
     "express": "^4.14.0",
+    "passport": "^0.3.2",
+    "passport-http": "^0.3.0",
     "pg": "^6.0.3",
     "pg-hstore": "^2.3.2",
     "pug": "^0.1.0",

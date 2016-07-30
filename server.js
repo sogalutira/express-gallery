@@ -6,10 +6,11 @@ var app = express();
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
+var passport = require('passport');
+var BasicStrategy = require('passport-http').BasicStrategy;
 
 var db = require('./models');
 var Gallery = db.Gallery;
-
 var locals = bodyParser.urlencoded({ extended: false });
 
 app.use(morgan('dev'));
@@ -17,6 +18,18 @@ app.use(locals);
 app.use(bodyParser.json());
 app.use(express.static(path.resolve(__dirname, "public")));
 // app.use(bodyParser.urlencoded());
+
+var user = { username: 'bob', password: 'secret1', email: 'bob@example.com' };
+
+passport.use(new BasicStrategy(
+  function(username, password, done) {
+    // Example authentication strategy using
+    if ( !(username === user.username && password === user.password) ) {
+      return done(null, false);
+    }
+    return done(null, user);
+}));
+
 app.use(methodOverride(function(req, res){
   if (req.body && typeof req.body === 'object' && '_method' in req.body) {
     // look in urlencoded POST bodies and delete it
@@ -25,6 +38,7 @@ app.use(methodOverride(function(req, res){
     return method;
   }
 }));
+
 app.set('views', path.resolve(__dirname, 'views'));
 app.set('view engine', 'pug');
 
@@ -35,7 +49,8 @@ app.get('/', function(req, res){
   });
 });
 
-app.get('/gallery/new', function(req, res){
+app.get('/gallery/new', passport.authenticate('basic', {session: false}), function(req, res){
+  console.log(req.user);
   res.render('gallery');
 });
 
@@ -48,7 +63,7 @@ app.get('/gallery/:id', function(req, res){
   });
 });
 
-app.get('/gallery/:id/edit', function(req, res){
+app.get('/gallery/:id/edit', passport.authenticate('basic', {session: false}), function(req, res){
     Gallery.findOne({
       where: { id: req.params.id}
     })
@@ -57,7 +72,11 @@ app.get('/gallery/:id/edit', function(req, res){
     });
 });
 
-app.post('/gallery', function(req, res, next){
+app.get('/gallery', function(req, res){
+  res.redirect('/');
+});
+
+app.post('/gallery', passport.authenticate('basic', {session: false}), function(req, res, next){
   Gallery.create({
     author: req.body.author,
     url: req.body.url,
@@ -68,7 +87,7 @@ app.post('/gallery', function(req, res, next){
   });
 });
 
-app.put('/gallery/:id', function(req, res){
+app.put('/gallery/:id', passport.authenticate('basic', {session: false}), function(req, res){
   Gallery.update( {
     author: req.body.author,
     url: req.body.url,
@@ -90,7 +109,7 @@ app.put('/gallery/:id', function(req, res){
   });
 });
 
-app.delete('/gallery/:id', function (req, res){
+app.delete('/gallery/:id', passport.authenticate('basic', {session: false}), function (req, res){
   Gallery.destroy({
     where: {
       id: req.params.id

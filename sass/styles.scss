@@ -28,6 +28,11 @@ $arial-font: Arial, Helvetica, sans-serif;
 }
 
 body {
+  hr.dotted {
+    border: 0;
+    border-bottom: 1px dotted #ccc;
+    background: #999;
+  }
   .headerDiv {
     font-family: $arial-font;
     font-size: 40px;
@@ -41,6 +46,11 @@ body {
     width: 350px;
     border-left: 1px grey;
     border-style: solid;
+  }
+  hr.line {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
   }
 
 }
