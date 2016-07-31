@@ -28,17 +28,21 @@ passport.deserializeUser(function(user, done){
   done(null, user);
 });
 
-var user = { username: 'bob', password: 'secret', email: 'bob@example.com' };
+// var user = { username: 'bob', password: 'secret', email: 'bob@example.com' };
 
 passport.use(new LocalStrategy(
   function(username, password, done) {
     // var USERNAME = CONFIG.CONFIG.USERNAME;
     // var PASSWORD = CONFIG.CONFIG.PASSWORD;
-    if (username === user.username && password === user.password){
-      return done(null, {});
-    }
-  }
-));
+    // if (username === user.username && password === user.password){
+    //   return done(null, {});
+    Users.findOne({where: {username: username}})
+    .then(function(user){
+      if(user){
+        return done(null, user);
+      }
+  });
+}));
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -75,7 +79,7 @@ app.get('/secret', function(req, res){
   res.render('secret');
 });
 
-app.get('/gallery/new', function(req, res){
+app.get('/gallery/new', passport.authenticate('local', {session:false}), function(req, res){
   console.log(req.user);
   res.render('gallery');
 });
