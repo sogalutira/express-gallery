@@ -6,8 +6,9 @@ var app = express();
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
+var session = require('express-session');
 var passport = require('passport');
-var BasicStrategy = require('passport-http').BasicStrategy;
+var LocalStrategy = require('passport-local').Strategy;
 
 var db = require('./models');
 var Gallery = db.Gallery;
@@ -16,19 +17,31 @@ var locals = bodyParser.urlencoded({ extended: false });
 app.use(morgan('dev'));
 app.use(locals);
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.resolve(__dirname, "public")));
-// app.use(bodyParser.urlencoded());
 
-var user = { username: 'bob', password: 'secret1', email: 'bob@example.com' };
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
 
-passport.use(new BasicStrategy(
+passport.deserializeUser(function(user, done){
+  done(null, user);
+});
+
+var user = { username: 'bob', password: 'secret', email: 'bob@example.com' };
+
+passport.use(new LocalStrategy(
   function(username, password, done) {
-    // Example authentication strategy using
-    if ( !(username === user.username && password === user.password) ) {
-      return done(null, false);
+    // var USERNAME = CONFIG.CONFIG.USERNAME;
+    // var PASSWORD = CONFIG.CONFIG.PASSWORD;
+    if (username === user.username && password === user.password){
+      return done(null, {});
     }
-    return done(null, user);
-}));
+  }
+));
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(methodOverride(function(req, res){
   if (req.body && typeof req.body === 'object' && '_method' in req.body) {
@@ -49,7 +62,20 @@ app.get('/', function(req, res){
   });
 });
 
-app.get('/gallery/new', passport.authenticate('basic', {session: false}), function(req, res){
+app.get('/login', function(req, res){
+  res.render('login');
+});
+
+app.post('/login', passport.authenticate('local',
+  {successRedirect: '/secret',
+  failureRedirect: '/login'
+}));
+
+app.get('/secret', function(req, res){
+  res.render('secret');
+});
+
+app.get('/gallery/new', function(req, res){
   console.log(req.user);
   res.render('gallery');
 });
@@ -63,7 +89,7 @@ app.get('/gallery/:id', function(req, res){
   });
 });
 
-app.get('/gallery/:id/edit', passport.authenticate('basic', {session: false}), function(req, res){
+app.get('/gallery/:id/edit', function(req, res){
     Gallery.findOne({
       where: { id: req.params.id}
     })
@@ -76,7 +102,7 @@ app.get('/gallery', function(req, res){
   res.redirect('/');
 });
 
-app.post('/gallery', passport.authenticate('basic', {session: false}), function(req, res, next){
+app.post('/gallery', function(req, res, next){
   Gallery.create({
     author: req.body.author,
     url: req.body.url,
@@ -87,7 +113,7 @@ app.post('/gallery', passport.authenticate('basic', {session: false}), function(
   });
 });
 
-app.put('/gallery/:id', passport.authenticate('basic', {session: false}), function(req, res){
+app.put('/gallery/:id', function(req, res){
   Gallery.update( {
     author: req.body.author,
     url: req.body.url,
@@ -109,7 +135,7 @@ app.put('/gallery/:id', passport.authenticate('basic', {session: false}), functi
   });
 });
 
-app.delete('/gallery/:id', passport.authenticate('basic', {session: false}), function (req, res){
+app.delete('/gallery/:id', function (req, res){
   Gallery.destroy({
     where: {
       id: req.params.id

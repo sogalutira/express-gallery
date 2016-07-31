@@ -67,19 +67,29 @@ table {
 body hr.dotted {
   border: 0;
   border-bottom: 1px dotted #ccc;
-  background: #999; }
+  background: #999;
+  margin-top: 7%; }
+
+body .topBar {
+  float: left;
+  width: 100%;
+  margin-bottom: 80px; }
 
 body .headerDiv {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 40px;
+  font-size: 50px;
   font-weight: bold;
-  float: left; }
+  float: left;
+  margin-left: 10%;
+  margin-right: 10px; }
 
 body .headerPDiv {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
   float: left;
   width: 350px;
+  margin-right: 10%;
+  padding-left: 10px;
   border-left: 1px grey;
   border-style: solid; }
 
