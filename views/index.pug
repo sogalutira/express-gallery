@@ -16,12 +16,11 @@ html(lang="en")
         a(href="gallery/" + Gallery[0].id)
           img(src=Gallery[0].url)
       hr(class="line")
-         //- - var i = 0
       div(class="row2")
         -var pics = 1
         while pics < Gallery.length
           div
-            span= pics%3
+            // span= pics%3
             a(href="gallery/" + Gallery[pics].id)
               img(src=Gallery[pics].url)
             p #{Gallery[pics].author}
