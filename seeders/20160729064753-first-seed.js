@@ -1,19 +1,23 @@
 'use strict';
+var faker = require('faker');
+var galleryObj = [];
+for (var i = 0; i < 7; i++){
+  var galleryInfo = {
+    author: faker.name.firstName(),
+    url: faker.image.imageUrl(300,300,"cats") + '/' + Math.floor(Math.random()*11),
+    description: faker.lorem.sentence(),
+    createdAt : new Date(),
+    updatedAt : new Date()
+    };
+  galleryObj.push(galleryInfo);
+}
 
 module.exports = {
   up: function (queryInterface, Sequelize) {
-    return queryInterface.bulkInsert('Galleries', [{
-      author : 'John',
-      url : 'http://lorempixel.com/400/200/',
-      description : 'I am a new user to this application',
-      createdAt : new Date(),
-      updatedAt : new Date()
-    }], {});
+    return queryInterface.bulkInsert('Galleries', galleryObj, {});
   },
 
   down: function (queryInterface, Sequelize) {
-    queryInterface.bulkDelete('Galleries', [{
-      author :'John'
-    }])
+    queryInterface.bulkDelete('Galleries');
   }
 };
