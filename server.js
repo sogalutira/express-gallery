@@ -203,7 +203,7 @@ app.put('/gallery/:id', function(req, res){
   });
 });
 
-app.delete('/gallery/:id', function (req, res){
+app.delete('/gallery/:id', isAuthenticated, function (req, res){
   Gallery.destroy({
     where: {
       id: req.params.id

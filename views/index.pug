@@ -14,17 +14,19 @@ html(lang="en")
           p(class="headerP") Welcome to our online portfolio, we are small group of passionate designers and architects, looking to change and create amazing digital images to inspire others to follow in our innovative steps. Free Architect WordPress Theme
       div(class="mainImg")
         a(href="gallery/" + Gallery[0].id)
-          img(src=Gallery[0].url)
+          img(class="mainImage" src=Gallery[0].url)
       hr(class="line")
       div(class="row2")
         -var pics = 1
         while pics < Gallery.length
-          div
+          div(class="rowPics")
             // span= pics%3
             a(href="gallery/" + Gallery[pics].id)
               img(src=Gallery[pics].url)
-            p #{Gallery[pics].author}
-            p #{Gallery[pics].description}
+            div(class="picPara")
+              p(class="authorP") #{Gallery[pics].author}
+              p(class="urlP") #{Gallery[pics].url}
+              p(class="descriptP") #{Gallery[pics].description}
           if pics%3 === 0
             hr(class="line")
           -pics++

@@ -52,6 +52,34 @@ $arial-font: Arial, Helvetica, sans-serif;
     .headerPDiv{
       display: none;
     }
+    .mainImg{
+      align-items: center;
+      margin: 25px;
+      text-align: center;
+    }
+    img.mainImage{
+      max-height: 90%;
+      max-width: 90%;
+      box-sizing: border-box;
+      align-items: center;
+    }
+    .row2{
+      align-items: center;
+      text-align: center;
+      margin: 25px;
+    }
+    .rowPics{
+      margin-bottom: 30px;
+    }
+    .picPara{
+      font-size: 14px;
+      font-family: $arial-font;
+      text-align: left;
+
+    }
+    p.descriptP{
+      display: none;
+    }
   }
 }
 
