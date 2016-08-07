@@ -22,7 +22,7 @@ html(lang="en")
           div(class="rowPics")
             // span= pics%3
             a(href="gallery/" + Gallery[pics].id)
-              img(src=Gallery[pics].url)
+              img(class="uploadedImg" src=Gallery[pics].url)
             div(class="picPara")
               p(class="authorP") #{Gallery[pics].author}
               p(class="urlP") #{Gallery[pics].url}
