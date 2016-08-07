@@ -3,20 +3,24 @@ html(lang="en")
 head
   meta(charset="utf-8")
   title Express Gallery
+  link(rel="stylesheet" type="text/css" href="/styles/styles.css")
 body
   div(class="topBar")
     div(class="headerDiv")
       h1(class="header1") _ARCHITEKT
-  img(src = gallery.url)
-  p Uploaded by: #{gallery.author}
-  p Description: #{gallery.description}
-  p
-  button(type="submit" onclick='editRedirect()') Edit
-
-  form(method="POST" action="/gallery/" + gallery.id enctype="application/x-www-form-urlencoded")
-    input(type="hidden" name="_method" value="DELETE")
+  div(class="imgContent")
+    div(class="titleDiv")
+      p(class="uploader") #{gallery.author} -
+      p #{gallery.url}
+    img(class="upImg" src = gallery.url)
+    div(class="descriptDiv")
+      p(class="description") #{gallery.description}
     p
-    button(type="submit") Delete
+    button(type="submit" onclick='editRedirect()') Edit
+    form(method="POST" action="/gallery/" + gallery.id enctype="application/x-www-form-urlencoded")
+      input(type="hidden" name="_method" value="DELETE")
+      p
+      button(type="submit") Delete
 script.
   function editRedirect(){
     window.location="/gallery/#{gallery.id}/edit"}

@@ -41,21 +41,14 @@ $arial-font: Arial, Helvetica, sans-serif;
 @media #{$small}{
   body{
     .topBar{
-      margin-bottom: 50px;
+      margin-bottom: 40px;
     }
     .headerDiv{
-      font-family: $arial-font;
       font-size: 50px;
       font-weight: bold;
-      text-align: center;
     }
     .headerPDiv{
       display: none;
-    }
-    .mainImg{
-      align-items: center;
-      margin: 25px;
-      text-align: center;
     }
     img.mainImage{
       max-height: 90%;
@@ -77,13 +70,25 @@ $arial-font: Arial, Helvetica, sans-serif;
     }
     .picPara{
       font-size: 14px;
-      font-family: $arial-font;
       text-align: left;
       margin-left: 16px;
-
     }
     p.descriptP{
       display: none;
+    }
+    .titleDiv{
+      box-sizing: border-box;
+      margin-bottom: 12px;
+      padding: 5px;
+    }
+    .imgContent{
+      margin-left: 50px;
+      .descriptDiv{
+        box-sizing: border-box;
+        padding: 5px;
+        margin-top: 20px;
+        font-size: 12px;
+      }
     }
   }
 }
@@ -102,7 +107,6 @@ $arial-font: Arial, Helvetica, sans-serif;
         margin-bottom: 80px;
       }
       .headerDiv {
-        font-family: $arial-font;
         font-size: 50px;
         font-weight: bold;
         float: left;
@@ -110,7 +114,6 @@ $arial-font: Arial, Helvetica, sans-serif;
         margin-right: 10px;
       }
       .headerPDiv{
-        font-family: $arial-font;
         font-size: 12px;
         float: left;
         width: 350px;
@@ -119,24 +122,42 @@ $arial-font: Arial, Helvetica, sans-serif;
         border-left: 1px grey;
         border-style: solid;
       }
-      hr.line {
-        border: 0;
-        height: 1px;
-        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+      .row2{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
       }
+      .rowPics{
+        box-sizing: border-box;
+        max-width: 300px;
+
+    }
   }
 }
 
 body{
   color: gray;
+  font-family: $arial-font;
+  text-align: left;
+    hr.line {
+      border: 0;
+      height: 1px;
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
     .topBar{
       margin-bottom: 50px;
+      margin-top: 45px;
     }
     .headerDiv{
-      font-family: $arial-font;
       font-size: 50px;
       font-weight: bold;
       text-align: center;
     }
-
+    .mainImg{
+      align-items: center;
+      margin: 25px;
+      text-align: center;
+      max-height: 100%;
+      max-width: 100%;
+    }
 }
