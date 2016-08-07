@@ -95,7 +95,12 @@ $arial-font: Arial, Helvetica, sans-serif;
 
 @media #{$large}{
   body {
-        hr.dotted {
+      .mainContent{
+        max-width: 1012px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      hr.dotted {
         border: 0;
         border-bottom: 1px dotted #ccc;
         background: #999;
@@ -126,10 +131,16 @@ $arial-font: Arial, Helvetica, sans-serif;
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
+        align-items: center;
       }
       .rowPics{
         box-sizing: border-box;
         max-width: 300px;
+        margin: 10px;
+        // .uploadedImg{
+        //   max-height: 200px;
+        //   max-width: 200px;
+        // }
 
     }
   }

@@ -105,6 +105,10 @@ table {
       font-size: 12px; } }
 
 @media (min-width: 900px) {
+  body .mainContent {
+    max-width: 1012px;
+    margin-left: auto;
+    margin-right: auto; }
   body hr.dotted {
     border: 0;
     border-bottom: 1px dotted #ccc;
@@ -131,10 +135,12 @@ table {
   body .row2 {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between; }
+    justify-content: space-between;
+    align-items: center; }
   body .rowPics {
     box-sizing: border-box;
-    max-width: 300px; } }
+    max-width: 300px;
+    margin: 10px; } }
 
 body {
   color: gray;
