@@ -67,6 +67,15 @@ table {
 @media (min-width: 100px) and (max-width: 600px) {
   body .topBar {
     margin-bottom: 40px; }
+  body hr.dotted {
+    display: none; }
+  body hr.line {
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    border-bottom: 1px #ccc;
+    background: #999;
+    margin-top: 7%; }
   body .headerDiv {
     font-size: 50px;
     font-weight: bold; }
@@ -78,31 +87,33 @@ table {
     box-sizing: border-box;
     align-items: center; }
   body .row2 {
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
     align-items: center;
-    text-align: center;
+    margin-left: 35px;
     margin: 25px; }
   body .rowPics {
-    margin-bottom: 30px; }
+    margin-bottom: 20px;
+    margin-top: 20px;
+    position: relative; }
   body img.uploadedImg {
     max-height: 90%;
     max-width: 90%; }
   body .picPara {
     font-size: 14px;
-    text-align: left;
-    margin-left: 16px; }
-  body p.descriptP {
-    display: none; }
+    text-align: left; }
   body .titleDiv {
     box-sizing: border-box;
     margin-bottom: 12px;
     padding: 5px; }
-  body .imgContent {
-    margin-left: 50px; }
-    body .imgContent .descriptDiv {
-      box-sizing: border-box;
-      padding: 5px;
-      margin-top: 20px;
-      font-size: 12px; } }
+  body .imgContent .descriptDiv {
+    box-sizing: border-box;
+    padding: 5px;
+    margin-top: 20px;
+    font-size: 12px; } }
 
 @media (min-width: 900px) {
   body .mainContent {
@@ -139,13 +150,15 @@ table {
     align-items: center; }
   body .rowPics {
     box-sizing: border-box;
-    max-width: 300px;
-    margin: 10px; } }
+    max-height: 90%; } }
 
 body {
   color: gray;
   font-family: Arial, Helvetica, sans-serif;
   text-align: left; }
+  body .mainContent {
+    margin-left: auto;
+    margin-right: auto; }
   body hr.line {
     border: 0;
     height: 1px;

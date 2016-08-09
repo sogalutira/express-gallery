@@ -43,6 +43,17 @@ $arial-font: Arial, Helvetica, sans-serif;
     .topBar{
       margin-bottom: 40px;
     }
+    hr.dotted{
+      display: none;
+    }
+    hr.line {
+      // justify-content: center;
+      // align-items: center;
+      border: 0;
+      border-bottom: 1px #ccc;
+      background: #999;
+      margin-top: 7%;
+    }
     .headerDiv{
       font-size: 50px;
       font-weight: bold;
@@ -57,24 +68,38 @@ $arial-font: Arial, Helvetica, sans-serif;
       align-items: center;
     }
     .row2{
-      align-items: center;
-      text-align: center;
+      // display: flex;
+      // flex-flow: row wrap;
+      // margin-left: auto;
+      // margin-right: auto;
+      // justify-content: center;
+      // align-items: center;
+      margin-left: 35px;
       margin: 25px;
     }
     .rowPics{
-      margin-bottom: 30px;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      // position: relative;
     }
     img.uploadedImg{
       max-height: 90%;
       max-width: 90%;
+      // position: relative;
+      // z-index: 1;
     }
     .picPara{
       font-size: 14px;
       text-align: left;
-      margin-left: 16px;
-    }
-    p.descriptP{
-      display: none;
+      // margin-left: 16px;
+      // p.authorP{
+      //   display: block;
+      //   position: absolute;
+      //   z-index: 2;
+      //   top: 80%;
+      //   right: 12%;
+      //   color: white;
+      // }
     }
     .titleDiv{
       box-sizing: border-box;
@@ -82,7 +107,7 @@ $arial-font: Arial, Helvetica, sans-serif;
       padding: 5px;
     }
     .imgContent{
-      margin-left: 50px;
+      // margin-left: 50px;
       .descriptDiv{
         box-sizing: border-box;
         padding: 5px;
@@ -135,8 +160,14 @@ $arial-font: Arial, Helvetica, sans-serif;
       }
       .rowPics{
         box-sizing: border-box;
+        max-height: 90%
         max-width: 300px;
         margin: 10px;
+        // display: flex;
+        // flex-flow: row wrap;
+        // flex-basis: 15%;
+        // flex-grow: 1;
+
         // .uploadedImg{
         //   max-height: 200px;
         //   max-width: 200px;
@@ -150,6 +181,10 @@ body{
   color: gray;
   font-family: $arial-font;
   text-align: left;
+  .mainContent{
+    margin-left: auto;
+    margin-right: auto;
+  }
     hr.line {
       border: 0;
       height: 1px;

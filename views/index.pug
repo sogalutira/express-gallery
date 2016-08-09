@@ -6,8 +6,8 @@ html(lang="en")
     link(rel="stylesheet" type="text/css" href="/styles/styles.css")
   body
     div(class="mainContent")
-      hr(class="dotted")
       div(class="topBar")
+        hr(class="dotted")
         div(class="headerDiv")
           h1(class="header1") _ARCHITEKT
         div(class="headerPDiv")
@@ -15,18 +15,19 @@ html(lang="en")
       div(class="mainImg")
         a(href="gallery/" + Gallery[0].id)
           img(class="mainImage" src=Gallery[0].url)
-      hr(class="line")
+        hr(class="line")
       div(class="row2")
         -var pics = 1
         while pics < Gallery.length
           div(class="rowPics")
             // span= pics%3
-            a(href="gallery/" + Gallery[pics].id)
-              img(class="uploadedImg" src=Gallery[pics].url)
+            div(class="picHolder")
+              a(href="gallery/" + Gallery[pics].id)
+                img(class="uploadedImg" src=Gallery[pics].url)
             div(class="picPara")
               p(class="authorP") #{Gallery[pics].author}
-              p(class="urlP") #{Gallery[pics].url}
-              p(class="descriptP") #{Gallery[pics].description}
+              p(class="descriptP") #{Gallery[pics].description} -
+              span(class="urlP") #{Gallery[pics].url}
           if pics%3 === 0
             hr(class="line")
           -pics++
