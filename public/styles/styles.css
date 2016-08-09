@@ -70,8 +70,6 @@ table {
   body hr.dotted {
     display: none; }
   body hr.line {
-    justify-content: center;
-    align-items: center;
     border: 0;
     border-bottom: 1px #ccc;
     background: #999;
@@ -87,18 +85,11 @@ table {
     box-sizing: border-box;
     align-items: center; }
   body .row2 {
-    display: flex;
-    flex-flow: row wrap;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-    align-items: center;
     margin-left: 35px;
     margin: 25px; }
   body .rowPics {
     margin-bottom: 20px;
-    margin-top: 20px;
-    position: relative; }
+    margin-top: 20px; }
   body img.uploadedImg {
     max-height: 90%;
     max-width: 90%; }
@@ -115,18 +106,37 @@ table {
     margin-top: 20px;
     font-size: 12px; } }
 
+@media (min-width: 600px) and (max-width: 900px) {
+  hr.dotted {
+    border: 0;
+    border-bottom: 1px dotted #ccc;
+    background: #999;
+    margin-top: 7%; }
+  .topBar {
+    display: flex;
+    width: 100%;
+    margin-bottom: 80px; }
+  .headerDiv {
+    font-size: 50px;
+    font-weight: bold;
+    margin-left: 10%;
+    margin-right: 10px; }
+  .headerPDiv {
+    font-size: 12px;
+    width: 350px;
+    margin-right: 10%;
+    padding-left: 10px;
+    border-left: 1px grey;
+    border-style: solid; } }
+
 @media (min-width: 900px) {
-  body .mainContent {
-    max-width: 1012px;
-    margin-left: auto;
-    margin-right: auto; }
   body hr.dotted {
     border: 0;
     border-bottom: 1px dotted #ccc;
     background: #999;
     margin-top: 7%; }
   body .topBar {
-    float: left;
+    display: flex;
     width: 100%;
     margin-bottom: 80px; }
   body .headerDiv {
@@ -146,8 +156,7 @@ table {
   body .row2 {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center; }
+    justify-content: space-between; }
   body .rowPics {
     box-sizing: border-box;
     max-height: 90%; } }

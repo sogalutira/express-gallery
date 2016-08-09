@@ -118,21 +118,44 @@ $arial-font: Arial, Helvetica, sans-serif;
   }
 }
 
-@media #{$large}{
-  body {
-      .mainContent{
-        max-width: 1012px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      hr.dotted {
+@media #{$medium}{
+        hr.dotted {
         border: 0;
         border-bottom: 1px dotted #ccc;
         background: #999;
         margin-top: 7%;
       }
       .topBar{
-        float: left;
+        display: flex;
+        width: 100%;
+        margin-bottom: 80px;
+      }
+      .headerDiv {
+        font-size: 50px;
+        font-weight: bold;
+        margin-left: 10%;
+        margin-right: 10px;
+      }
+      .headerPDiv{
+        font-size: 12px;
+        width: 350px;
+        margin-right: 10%;
+        padding-left: 10px;
+        border-left: 1px grey;
+        border-style: solid;
+      }
+}
+
+@media #{$large}{
+  body {
+        hr.dotted {
+        border: 0;
+        border-bottom: 1px dotted #ccc;
+        background: #999;
+        margin-top: 7%;
+      }
+      .topBar{
+        display: flex;
         width: 100%;
         margin-bottom: 80px;
       }
@@ -156,13 +179,13 @@ $arial-font: Arial, Helvetica, sans-serif;
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
-        align-items: center;
       }
       .rowPics{
         box-sizing: border-box;
         max-height: 90%
-        max-width: 300px;
-        margin: 10px;
+        // max-width: 300px;
+// <<<<<<< HEAD
+        // margin: 10px;
         // display: flex;
         // flex-flow: row wrap;
         // flex-basis: 15%;
@@ -172,6 +195,8 @@ $arial-font: Arial, Helvetica, sans-serif;
         //   max-height: 200px;
         //   max-width: 200px;
         // }
+// =======
+// >>>>>>> parent of 2b98f2f... desktop view scss 3 per row
 
     }
   }
