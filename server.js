@@ -124,10 +124,6 @@ app.post('/login',
   })
 );
 
-// app.get('/secret', function(req, res){
-//   res.render('secret');
-// });
-
 app.get('/', function(req, res){
   Gallery.findAll()
   .then(function (Gallery){
@@ -165,9 +161,6 @@ app.get('/gallery/:id/edit', isAuthenticated, function(req, res){
     });
 });
 
-// app.post('/login', function(req, res) {
-//   console.log("entered the app.post method");
-// });
 
 app.post('/gallery', function(req, res, next){
   Gallery.create({
@@ -198,7 +191,6 @@ app.put('/gallery/:id', function(req, res){
   })
   .then(function (update){
     res.render('singlegallery', {gallery: update});
-    // res.redirect('singlegallery');
   });
 });
 

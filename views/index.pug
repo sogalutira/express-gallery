@@ -6,6 +6,8 @@ html(lang="en")
     link(rel="stylesheet" type="text/css" href="/styles/styles.css")
   body
     div(class="mainContent")
+      div(class="loginButton")
+        button(type="submit" onclick='redirect()') Login
       div(class="hrDot")
         hr(class="dotted")
       div(class="topBar")
@@ -32,3 +34,6 @@ html(lang="en")
           if pics%3 === 0
             hr(class="line")
           -pics++
+script.
+  function redirect(){
+    window.location="/login"}

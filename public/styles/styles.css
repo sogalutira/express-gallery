@@ -104,7 +104,7 @@ table {
     box-sizing: border-box;
     margin-bottom: 12px;
     padding: 5px; }
-  body .imgContent .descriptDiv {
+  body .descriptDiv {
     box-sizing: border-box;
     padding: 5px;
     margin-top: 20px;
@@ -130,10 +130,11 @@ table {
     font-size: 50px;
     font-weight: bold;
     margin-left: 10%;
-    margin-right: 10px; }
+    margin-right: 10px;
+    width: 50%; }
   .headerPDiv {
     font-size: 12px;
-    width: 350px;
+    width: 50%;
     margin-right: 10%;
     padding-left: 10px;
     border-left: 1px grey;
@@ -165,10 +166,11 @@ table {
     font-size: 50px;
     font-weight: bold;
     margin-left: 10%;
-    margin-right: 10px; }
+    margin-right: 10px;
+    width: 50%; }
   body .headerPDiv {
     font-size: 12px;
-    width: 350px;
+    width: 50%;
     margin-right: 10%;
     padding-left: 10px;
     border-left: 1px grey;
@@ -183,8 +185,7 @@ table {
   body .rowPics {
     box-sizing: border-box;
     max-height: 90%;
-    max-width: 300px;
-    margin: 20px; }
+    max-width: 300px; }
   body .picPara {
     max-width: 400px; } }
 
