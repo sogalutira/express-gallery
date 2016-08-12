@@ -80,6 +80,9 @@ $arial-font: Arial, Helvetica, sans-serif;
     .rowPics{
       margin-bottom: 20px;
       margin-top: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 300px;
       // position: relative;
     }
     img.uploadedImg{
@@ -91,6 +94,7 @@ $arial-font: Arial, Helvetica, sans-serif;
     .picPara{
       font-size: 14px;
       text-align: left;
+      width: 300px;
       // margin-left: 16px;
       // p.authorP{
       //   display: block;
@@ -119,17 +123,30 @@ $arial-font: Arial, Helvetica, sans-serif;
 }
 
 @media #{$medium}{
-        hr.dotted {
+      hr.dotted {
         border: 0;
         border-bottom: 1px dotted #ccc;
         background: #999;
         margin-top: 7%;
       }
+      .hrDot{
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto
+      }
       .topBar{
+        box-sizing: border-box;
         display: flex;
+        flex-flow: row;
         width: 100%;
         margin-bottom: 80px;
       }
+      // .topBar > div{
+      //   flex: 1 0 50%;
+      // }
+      // .topBar > .div:first-child{
+      //   flex: 0 1 100%;
+      // }
       .headerDiv {
         font-size: 50px;
         font-weight: bold;
@@ -148,27 +165,52 @@ $arial-font: Arial, Helvetica, sans-serif;
 
 @media #{$large}{
   body {
-        hr.dotted {
+      hr.dotted {
         border: 0;
         border-bottom: 1px dotted #ccc;
         background: #999;
         margin-top: 7%;
       }
+      .hrDot{
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto
+      }
+      hr.line {
+      // justify-content: center;
+      // align-items: center;
+      width: 100%;
+      border: 0;
+      border-bottom: 1px #ccc;
+      background: #999;
+      margin-top: 5px;
+      }
       .topBar{
+        box-sizing: border-box;
         display: flex;
+        flex-flow: row;
         width: 100%;
         margin-bottom: 80px;
       }
+      // .topBar{
+      //   display: flex;
+      //   width: 100%;
+      //   margin-bottom: 80px;
+      // }
+      // .topBar > div {
+      //   flex: 1 0 50%;
+      // }
+      // .topBar > div:first-child{
+      //   flex: 1 0 100%;
+      // }
       .headerDiv {
         font-size: 50px;
         font-weight: bold;
-        float: left;
         margin-left: 10%;
         margin-right: 10px;
       }
       .headerPDiv{
         font-size: 12px;
-        float: left;
         width: 350px;
         margin-right: 10%;
         padding-left: 10px;
@@ -178,12 +220,21 @@ $arial-font: Arial, Helvetica, sans-serif;
       .row2{
         display: flex;
         flex-flow: row wrap;
-        justify-content: space-between;
+        justify-content: space-around;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
       }
       .rowPics{
         box-sizing: border-box;
-        max-height: 90%
+        max-height: 90%;
+        max-width: 300px;
+        margin: 20px;
+      }
+      .picPara{
+        max-width: 400px;
         // max-width: 300px;
+      }
 // <<<<<<< HEAD
         // margin: 10px;
         // display: flex;
@@ -198,7 +249,7 @@ $arial-font: Arial, Helvetica, sans-serif;
 // =======
 // >>>>>>> parent of 2b98f2f... desktop view scss 3 per row
 
-    }
+
   }
 }
 

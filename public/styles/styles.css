@@ -89,13 +89,17 @@ table {
     margin: 25px; }
   body .rowPics {
     margin-bottom: 20px;
-    margin-top: 20px; }
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px; }
   body img.uploadedImg {
     max-height: 90%;
     max-width: 90%; }
   body .picPara {
     font-size: 14px;
-    text-align: left; }
+    text-align: left;
+    width: 300px; }
   body .titleDiv {
     box-sizing: border-box;
     margin-bottom: 12px;
@@ -112,8 +116,14 @@ table {
     border-bottom: 1px dotted #ccc;
     background: #999;
     margin-top: 7%; }
+  .hrDot {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto; }
   .topBar {
+    box-sizing: border-box;
     display: flex;
+    flex-flow: row;
     width: 100%;
     margin-bottom: 80px; }
   .headerDiv {
@@ -135,19 +145,29 @@ table {
     border-bottom: 1px dotted #ccc;
     background: #999;
     margin-top: 7%; }
+  body .hrDot {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto; }
+  body hr.line {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px #ccc;
+    background: #999;
+    margin-top: 5px; }
   body .topBar {
+    box-sizing: border-box;
     display: flex;
+    flex-flow: row;
     width: 100%;
     margin-bottom: 80px; }
   body .headerDiv {
     font-size: 50px;
     font-weight: bold;
-    float: left;
     margin-left: 10%;
     margin-right: 10px; }
   body .headerPDiv {
     font-size: 12px;
-    float: left;
     width: 350px;
     margin-right: 10%;
     padding-left: 10px;
@@ -156,10 +176,17 @@ table {
   body .row2 {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between; }
+    justify-content: space-around;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto; }
   body .rowPics {
     box-sizing: border-box;
-    max-height: 90%; } }
+    max-height: 90%;
+    max-width: 300px;
+    margin: 20px; }
+  body .picPara {
+    max-width: 400px; } }
 
 body {
   color: gray;

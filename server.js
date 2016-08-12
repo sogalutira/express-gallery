@@ -76,7 +76,6 @@ passport.use(new LocalStrategy(
       //   console.log('after if statement false');
       //   return done(null, false);
       // }
-      console.log('before return user');
       return done(null, user); // kicks off serializeUser
     });
   }
@@ -111,7 +110,7 @@ app.use(methodOverride(function(req, res){
     var method = req.body._method;
     delete req.body._method;
     return method;
-  } console.log('after method override');
+  }
 }));
 
 app.get('/login', function(req, res){
@@ -125,9 +124,9 @@ app.post('/login',
   })
 );
 
-app.get('/secret', function(req, res){
-  res.render('secret');
-});
+// app.get('/secret', function(req, res){
+//   res.render('secret');
+// });
 
 app.get('/', function(req, res){
   Gallery.findAll()
@@ -227,3 +226,4 @@ function isAuthenticated (req, res, next) {
   }
   return next();
 }
+
