@@ -11,6 +11,12 @@ $arial-font: Arial, Helvetica, sans-serif;
 
 @media #{$small}{
   body{
+    .loginButton{
+      margin-top: 10px;
+      margin-right: 20px;
+      display: flex;
+      justify-content: flex-end;
+    }
     .topBar{
       margin-bottom: 40px;
     }
@@ -120,11 +126,11 @@ $arial-font: Arial, Helvetica, sans-serif;
         margin-right: auto
       }
       hr.line {
-      width: 100%;
-      border: 0;
-      border-bottom: 1px #ccc;
-      background: #999;
-      margin-top: 5px;
+        width: 100%;
+        border: 0;
+        border-bottom: 1px #ccc;
+        background: #999;
+        margin-top: 5px;
       }
       .topBar{
         box-sizing: border-box;
@@ -175,25 +181,25 @@ body{
     margin-left: auto;
     margin-right: auto;
   }
-    hr.line {
-      border: 0;
-      height: 1px;
-      background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-    }
-    .topBar{
-      margin-bottom: 50px;
-      margin-top: 45px;
-    }
-    .headerDiv{
-      font-size: 50px;
-      font-weight: bold;
-      text-align: center;
-    }
-    .mainImg{
-      align-items: center;
-      margin: 25px;
-      text-align: center;
-      max-height: 100%;
-      max-width: 100%;
-    }
+  hr.line {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  }
+  .topBar{
+    margin-bottom: 50px;
+    margin-top: 45px;
+  }
+  .headerDiv{
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .mainImg{
+    align-items: center;
+    margin: 25px;
+    text-align: center;
+    max-height: 100%;
+    max-width: 100%;
+  }
 }
