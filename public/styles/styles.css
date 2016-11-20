@@ -64,55 +64,168 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-@media (min-width: 100px) and (max-width: 600px) {
+body {
+  color: gray;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left; }
+  body .mainContent {
+    margin-left: auto;
+    margin-right: auto; }
   body .buttons {
     margin-top: 10px;
     margin-right: 20px;
     display: flex;
     justify-content: flex-end; }
-  body .topBar {
-    margin-bottom: 40px; }
-  body hr.dotted {
-    display: none; }
   body hr.line {
+    width: 100%;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.75), transparent);
+    margin-top: 10px;
+    margin-bottom: 10px; }
+  body hr.dotted {
+    max-width: 80%;
+    border-top: 1px dotted #8c8b8b;
     margin-top: 7%; }
+    @media (min-width: 100px) and (max-width: 600px) {
+      body hr.dotted {
+        display: none; } }
+  body .topBar {
+    margin-bottom: 40px;
+    margin-top: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row;
+    width: 100%; }
+    @media (min-width: 600px) and (max-width: 915px) {
+      body .topBar {
+        margin-bottom: 80px;
+        margin-top: 0px; } }
+    @media (min-width: 915px) {
+      body .topBar {
+        justify-content: center;
+        margin-top: 0px; } }
   body .headerDiv {
     font-size: 50px;
-    font-weight: bold; }
+    font-weight: bold;
+    margin-left: 10%;
+    margin-right: 10px;
+    max-width: 100%; }
   body .headerPDiv {
-    display: none; }
-  body img.mainImage {
-    max-height: 90%;
-    max-width: 90%;
-    box-sizing: border-box;
-    align-items: center; }
-  body .row2 {
-    margin-left: 35px;
-    margin: 25px; }
-  body .rowPics {
-    margin-bottom: 20px;
-    margin-top: 20px;
+    font-size: 12px;
+    margin-right: 10%;
+    padding-left: 10px;
+    border-left: 1px grey;
+    border-style: solid; }
+    @media (min-width: 100px) and (max-width: 600px) {
+      body .headerPDiv {
+        display: none; } }
+    @media (min-width: 600px) and (max-width: 915px) {
+      body .headerPDiv {
+        max-width: 100%; } }
+    @media (min-width: 915px) {
+      body .headerPDiv {
+        height: 60px;
+        width: 295px; } }
+  @media (min-width: 600px) and (max-width: 915px) {
+    body .header1 {
+      font-size: 52px;
+      max-width: 100%; } }
+  @media (min-width: 915px) {
+    body .header1 {
+      font-size: 62px;
+      width: 425px; } }
+  body .headerP {
+    height: 60px;
+    min-width: 200px;
+    max-width: 280px; }
+    @media (min-width: 915px) {
+      body .headerP {
+        width: 280px; } }
+  body .mainImg {
+    align-items: center;
+    margin: 10px;
+    text-align: center;
+    max-height: 100%;
+    max-width: 100%;
     margin-left: auto;
-    margin-right: auto;
-    max-width: 300px; }
+    margin-right: auto; }
+    @media (min-width: 100px) and (max-width: 600px) {
+      body .mainImg {
+        max-height: 90%;
+        max-width: 90%;
+        box-sizing: border-box;
+        align-items: center; } }
+  @media (min-width: 100px) and (max-width: 600px) {
+    body .row2 {
+      margin-left: 35px;
+      margin: 25px; } }
+  @media (min-width: 600px) and (max-width: 915px) {
+    body .row2 {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 915px; } }
+  @media (min-width: 915px) {
+    body .row2 {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1200px; } }
+  body .rowPics {
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto; }
+    @media (min-width: 100px) and (max-width: 600px) {
+      body .rowPics {
+        margin-bottom: 20px;
+        margin-top: 20px;
+        max-width: 300px; } }
+    @media (min-width: 600px) and (max-width: 915px) {
+      body .rowPics {
+        max-height: 90%;
+        max-width: 33%; } }
+    @media (min-width: 915px) {
+      body .rowPics {
+        max-height: 90%;
+        max-width: 300px; } }
   body img.uploadedImg {
     max-height: 100%;
     max-width: 100%; }
   body .picHolder {
     position: relative;
-    display: block;
-    height: 300px;
-    width: 285px;
-    margin-left: auto;
-    margin-right: auto; }
+    display: block; }
+    @media (min-width: 100px) and (max-width: 600px) {
+      body .picHolder {
+        height: 300px;
+        width: 285px;
+        margin-left: auto;
+        margin-right: auto; } }
+    @media (min-width: 600px) and (max-width: 915px) {
+      body .picHolder {
+        max-height: 100%;
+        max-width: 100%;
+        margin-left: 2%; } }
+    @media (min-width: 915px) {
+      body .picHolder {
+        width: 285px; } }
   body .picPara {
     display: block;
     font-size: 14px;
     text-align: left;
     max-width: 100%;
     word-wrap: break-word;
-    margin-left: 2%;
-    margin-right: auto; }
+    margin-left: 2%; }
+    @media (min-width: 100px) and (max-width: 600px) {
+      body .picPara {
+        margin-right: auto; } }
+    @media (min-width: 915px) {
+      body .picPara {
+        max-width: 400px; } }
   body .authorP {
     color: white;
     text-align: right;
@@ -123,187 +236,17 @@ table {
     width: 100%;
     margin-top: -20px;
     z-index: 2; }
-  body .descriptP {
-    word-wrap: break-word; }
-  body .titleDiv {
-    box-sizing: border-box;
-    margin-bottom: 12px;
-    padding: 5px; }
-  body .descriptDiv {
-    box-sizing: border-box;
-    padding: 5px;
-    margin-top: 20px;
-    font-size: 12px; } }
-
-@media (min-width: 600px) and (max-width: 915px) {
-  hr.dotted {
-    border-top: 1px dotted #8c8b8b;
-    margin-top: 7%; }
-  .hrDot {
-    max-width: 80%;
-    margin-left: auto;
-    margin-right: auto; }
-  .topBar {
-    box-sizing: border-box;
-    display: flex;
-    flex-flow: row;
-    width: 100%;
-    margin-bottom: 80px; }
-  .headerDiv {
-    font-size: 50px;
-    font-weight: bold;
-    margin-left: 10%;
-    margin-right: 10px;
-    width: 50%; }
-  .headerPDiv {
-    font-size: 12px;
-    width: 50%;
-    margin-right: 10%;
-    padding-left: 10px;
-    border-left: 1px grey;
-    border-style: solid; }
-  .row2 {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    max-width: 915px;
-    margin-left: auto;
-    margin-right: auto; }
-  .rowPics {
-    box-sizing: border-box;
-    max-height: 90%;
-    max-width: 33%;
-    margin-left: auto;
-    margin-right: auto; }
-  .picHolder {
-    position: relative;
-    display: block;
-    max-height: 100%;
-    max-width: 100%;
-    margin-left: 2%; }
-  .picPara {
-    display: block;
-    font-size: 14px;
-    text-align: left;
-    max-width: 100%;
-    word-wrap: break-word;
-    margin-left: 2%; }
-  .authorP {
-    color: white;
-    text-align: right;
-    background-color: #2e3333;
-    opacity: 0.5;
-    position: absolute;
-    display: block;
-    width: 100%;
-    margin-top: -20px;
-    z-index: 2; } }
-
-@media (min-width: 915px) {
-  body hr.dotted {
-    border-top: 1px dotted #8c8b8b; }
-  body .hrDot {
-    max-width: 80%;
-    margin-left: auto;
-    margin-right: auto; }
-  body hr.line {
-    margin-top: 5px; }
-  body .topBar {
-    box-sizing: border-box;
-    display: flex;
-    flex-flow: row;
-    width: 100%;
-    margin-bottom: 80px;
-    justify-content: center; }
-  body .headerDiv {
-    font-size: 50px;
-    font-weight: bold;
-    margin-left: 10%;
-    margin-right: 10px;
-    width: 50%; }
-  body .header1 {
-    font-size: 62px;
-    width: 425px; }
-  body .headerPDiv {
-    font-size: 12px;
-    height: 60px;
-    width: 295px;
-    margin-right: 10%;
-    padding-left: 10px;
-    border-left: 1px grey;
-    border-style: solid; }
-  body .headerP {
-    height: 60px;
-    width: 280px; }
-  body .row2 {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto; }
-  body .rowPics {
-    box-sizing: border-box;
-    max-height: 90%;
-    max-width: 300px;
-    margin-left: auto;
-    margin-right: auto; }
-  body .picHolder {
-    position: relative;
-    display: block;
-    max-height: 100%;
-    width: 285px;
-    margin-left: 2%; }
-  body .picPara {
-    display: block;
-    font-size: 14px;
-    text-align: left;
-    max-width: 400px;
-    word-wrap: break-word; }
-  body .authorP {
-    color: white;
-    text-align: right;
-    background-color: #2e3333;
-    opacity: 0.5;
-    position: absolute;
-    display: block;
-    width: 100%;
-    margin-top: -20px;
-    z-index: 2; } }
-
-body {
-  color: gray;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: left; }
-  body .mainContent {
-    margin-left: auto;
-    margin-right: auto; }
-  body hr.line {
-    width: 100%;
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.75), transparent);
-    margin-top: 10px;
-    margin-bottom: 10px; }
-  body .topBar {
-    margin-bottom: 50px;
-    margin-top: 10px; }
-  body .headerDiv {
-    font-size: 50px;
-    font-weight: bold;
-    text-align: center; }
-  body .mainImg {
-    align-items: center;
-    margin: 10px;
-    text-align: center;
-    max-height: 100%;
-    max-width: 100%; }
-  body img.uploadedImg {
-    max-height: 100%;
-    max-width: 100%; }
-  body .picPara {
-    display: block;
-    font-size: 14px;
-    text-align: left;
-    width: 300px;
-    word-wrap: break-word; }
+  @media (min-width: 100px) and (max-width: 600px) {
+    body .descriptP {
+      word-wrap: break-word; } }
+  @media (min-width: 100px) and (max-width: 600px) {
+    body .titleDiv {
+      box-sizing: border-box;
+      margin-bottom: 12px;
+      padding: 5px; } }
+  @media (min-width: 100px) and (max-width: 600px) {
+    body .descriptDiv {
+      box-sizing: border-box;
+      padding: 5px;
+      margin-top: 20px;
+      font-size: 12px; } }

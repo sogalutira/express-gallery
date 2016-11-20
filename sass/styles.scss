@@ -1,161 +1,177 @@
 @import "sass/partials/clearfix";
 @import "sass/partials/reset";
 
-$dark-color : #000000;
-
 $small: "(min-width: 100px) and (max-width: 600px)";
 $medium: "(min-width: 600px) and (max-width: 915px)";
 $large: "(min-width: 915px)";
 
 $arial-font: Arial, Helvetica, sans-serif;
 
-@media #{$small}{
-  body{
-    .buttons{
-      margin-top: 10px;
-      margin-right: 20px;
-      display: flex;
-      justify-content: flex-end;
-    }
-    .topBar{
-      margin-bottom: 40px;
-    }
-    hr.dotted{
+body{
+  color: gray;
+  font-family: $arial-font;
+  text-align: left;
+
+  .mainContent{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .buttons{
+    margin-top: 10px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  hr.line {
+    width: 100%;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  hr.dotted{
+    max-width: 80%;
+    border-top: 1px dotted #8c8b8b;
+    margin-top: 7%;
+    @media #{$small}{
       display: none;
     }
-    hr.line {
-      margin-top: 7%;
+  }
+  .topBar{
+    margin-bottom: 40px;
+    margin-top: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    @media #{$medium}{
+      margin-bottom: 80px;
+      margin-top: 0px;
     }
-    .headerDiv{
-      font-size: 50px;
-      font-weight: bold;
+    @media #{$large}{
+      justify-content: center;
+      margin-top: 0px;
     }
-    .headerPDiv{
+  }
+  .headerDiv{
+    font-size: 50px;
+    font-weight: bold;
+    margin-left: 10%;
+    margin-right: 10px;
+    max-width: 100%;
+  }
+  .headerPDiv{
+    font-size: 12px;
+    margin-right: 10%;
+    padding-left: 10px;
+    border-left: 1px grey;
+    border-style: solid;
+    @media #{$small}{
       display: none;
     }
-    img.mainImage{
+    @media #{$medium}{
+      max-width: 100%;
+    }
+    @media #{$large}{
+      height: 60px;
+      width: 295px;
+    }
+  }
+  .header1{
+    @media #{$medium}{
+      font-size: 52px;
+      max-width: 100%;
+    }
+    @media #{$large}{
+      font-size: 62px;
+      width: 425px;
+    }
+  }
+  .headerP{
+    height: 60px;
+    min-width: 200px;
+    max-width: 280px;
+    @media #{$large}{
+      width: 280px;
+    }
+  }
+  .mainImg{
+    align-items: center;
+    margin: 10px;
+    text-align: center;
+    max-height: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    @media #{$small}{
       max-height: 90%;
       max-width: 90%;
       box-sizing: border-box;
       align-items: center;
     }
-    .row2{
+  }
+  .row2{
+    @media #{$small}{
       margin-left: 35px;
       margin: 25px;
     }
-    .rowPics{
-      margin-bottom: 20px;
-      margin-top: 20px;
+    @media #{$medium}{
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
       margin-left: auto;
       margin-right: auto;
+      max-width: 915px;
+    }
+    @media #{$large}{
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1200px;
+    }
+  }
+  .rowPics{
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    @media #{$small}{
+      margin-bottom: 20px;
+      margin-top: 20px;
       max-width: 300px;
     }
-    img.uploadedImg{
-      max-height: 100%;
-      max-width: 100%;
+    @media #{$medium}{
+      max-height: 90%;
+      max-width: 33%;
     }
-    .picHolder{
-      position: relative;
-      display: block;
+    @media #{$large}{
+      max-height: 90%;
+      max-width: 300px;
+    }
+  }
+  img.uploadedImg{
+    max-height: 100%;
+    max-width: 100%;
+  }
+  .picHolder{
+    position: relative;
+    display: block;
+    @media #{$small}{
       height: 300px;
       width: 285px;
       margin-left: auto;
       margin-right: auto;
     }
-    .picPara{
-      display: block;
-      font-size: 14px;
-      text-align: left;
+    @media #{$medium}{
+      max-height: 100%;
       max-width: 100%;
-      word-wrap: break-word;
       margin-left: 2%;
-      margin-right: auto;
     }
-    .authorP{
-      color: white;
-      text-align: right;
-      background-color: #2e3333;
-      opacity: 0.5;
-      position: absolute;
-      display: block;
-      width: 100%;
-      margin-top: -20px;
-      z-index: 2;
+    @media #{$large}{
+      width: 285px;
     }
-    .descriptP{
-      // margin-left: 2%;
-      word-wrap: break-word;
-    }
-    .urlP{
-      // margin-left: 2%;
-    }
-    .titleDiv{
-      box-sizing: border-box;
-      margin-bottom: 12px;
-      padding: 5px;
-    }
-    .descriptDiv{
-      box-sizing: border-box;
-      padding: 5px;
-      margin-top: 20px;
-      font-size: 12px;
-    }
-  }
-}
-
-@media #{$medium}{
-  hr.dotted {
-    border-top: 1px dotted #8c8b8b;
-    margin-top: 7%;
-  }
-  .hrDot{
-    max-width: 80%;
-    margin-left: auto;
-    margin-right: auto
-  }
-  .topBar{
-    box-sizing: border-box;
-    display: flex;
-    flex-flow: row;
-    width: 100%;
-    margin-bottom: 80px;
-  }
-  .headerDiv {
-    font-size: 50px;
-    font-weight: bold;
-    margin-left: 10%;
-    margin-right: 10px;
-    width: 50%;
-  }
-  .headerPDiv{
-    font-size: 12px;
-    width: 50%;
-    margin-right: 10%;
-    padding-left: 10px;
-    border-left: 1px grey;
-    border-style: solid;
-  }
-  .row2{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    max-width: 915px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .rowPics{
-    box-sizing: border-box;
-    max-height: 90%;
-    max-width: 33%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .picHolder{
-    position: relative;
-    display: block;
-    max-height: 100%;
-    max-width: 100%;
-    margin-left: 2%;
   }
   .picPara{
     display: block;
@@ -164,6 +180,12 @@ $arial-font: Arial, Helvetica, sans-serif;
     max-width: 100%;
     word-wrap: break-word;
     margin-left: 2%;
+    @media #{$small}{
+      margin-right: auto;
+    }
+    @media #{$large}{
+      max-width: 400px;
+    }
   }
   .authorP{
     color: white;
@@ -176,145 +198,25 @@ $arial-font: Arial, Helvetica, sans-serif;
     margin-top: -20px;
     z-index: 2;
   }
-}
-
-@media #{$large}{
-  body {
-    hr.dotted {
-      border-top: 1px dotted #8c8b8b;
-    }
-    .hrDot{
-      max-width: 80%;
-      margin-left: auto;
-      margin-right: auto
-    }
-    hr.line {
-      margin-top: 5px;
-    }
-    .topBar{
-      box-sizing: border-box;
-      display: flex;
-      flex-flow: row;
-      width: 100%;
-      margin-bottom: 80px;
-      justify-content: center;
-
-    }
-    .headerDiv {
-      font-size: 50px;
-      font-weight: bold;
-      margin-left: 10%;
-      margin-right: 10px;
-      width: 50%;
-    }
-    .header1{
-      font-size: 62px;
-      width: 425px;
-    }
-    .headerPDiv{
-      font-size: 12px;
-      height: 60px;
-      width: 295px;
-      margin-right: 10%;
-      padding-left: 10px;
-      border-left: 1px grey;
-      border-style: solid;
-    }
-    .headerP{
-      height: 60px;
-      width: 280px;
-    }
-    .row2{
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-around;
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .rowPics{
-      box-sizing: border-box;
-      max-height: 90%;
-      max-width: 300px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .picHolder{
-      position: relative;
-      display: block;
-      max-height: 100%;
-      width: 285px;
-      margin-left: 2%;
-    }
-    .picPara{
-      display: block;
-      font-size: 14px;
-      text-align: left;
-      max-width: 400px;
+  .descriptP{
+    @media #{$small}{
       word-wrap: break-word;
     }
-    .authorP{
-      color: white;
-      text-align: right;
-      background-color: #2e3333;
-      opacity: 0.5;
-      position: absolute;
-      display: block;
-      width: 100%;
-      margin-top: -20px;
-      z-index: 2;
+  }
+
+  .titleDiv{
+    @media #{$small}{
+      box-sizing: border-box;
+      margin-bottom: 12px;
+      padding: 5px;
     }
   }
-}
-
-body{
-  color: gray;
-  font-family: $arial-font;
-  text-align: left;
-  .mainContent{
-    margin-left: auto;
-    margin-right: auto;
-  }
-  hr.line {
-    width: 100%;
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-  .topBar{
-    margin-bottom: 50px;
-    margin-top: 10px;
-  }
-  .headerDiv{
-    font-size: 50px;
-    font-weight: bold;
-    text-align: center;
-  }
-  .mainImg{
-    align-items: center;
-    margin: 10px;
-    text-align: center;
-    max-height: 100%;
-    max-width: 100%;
-  }
-  img.uploadedImg{
-    max-height: 100%;
-    max-width: 100%;
-  }
-  // .picHolder{
-  //   position: relative;
-  //   display: block;
-  //   height: 300px;
-  //   width: 285px;
-  //   margin-left: 2%;
-  // }
-  .picPara{
-    display: block;
-    font-size: 14px;
-    text-align: left;
-    width: 300px;
-    word-wrap: break-word;
+  .descriptDiv{
+    @media #{$small}{
+      box-sizing: border-box;
+      padding: 5px;
+      margin-top: 20px;
+      font-size: 12px;
+    }
   }
 }
