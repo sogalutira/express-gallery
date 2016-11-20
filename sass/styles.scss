@@ -11,7 +11,7 @@ $arial-font: Arial, Helvetica, sans-serif;
 
 @media #{$small}{
   body{
-    .loginButton{
+    .buttons{
       margin-top: 10px;
       margin-right: 20px;
       display: flex;
@@ -69,10 +69,13 @@ $arial-font: Arial, Helvetica, sans-serif;
       font-size: 14px;
       text-align: left;
       width: 300px;
+      word-wrap: break-word;
     }
     .authorP{
       color: white;
       text-align: right;
+      background-color: #2e3333;
+      opacity: 0.5;
       position: absolute;
       display: block;
       width: 100%;
