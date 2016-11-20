@@ -27,9 +27,9 @@ html(lang="en")
             div(class="picHolder")
               a(href="gallery/" + Gallery[pics].id)
                 img(class="uploadedImg" src=Gallery[pics].url)
+              span(class="authorP") #{Gallery[pics].author}
             div(class="picPara")
-              p(class="authorP") #{Gallery[pics].author}
-              p(class="descriptP") #{Gallery[pics].description} -
+              span(class="descriptP") #{Gallery[pics].description} -
               span(class="urlP") #{Gallery[pics].url}
           if pics%3 === 0
             hr(class="line")
