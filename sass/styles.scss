@@ -24,9 +24,6 @@ $arial-font: Arial, Helvetica, sans-serif;
       display: none;
     }
     hr.line {
-      border: 0;
-      border-bottom: 1px #ccc;
-      background: #999;
       margin-top: 7%;
     }
     .headerDiv{
@@ -98,9 +95,7 @@ $arial-font: Arial, Helvetica, sans-serif;
 
 @media #{$medium}{
       hr.dotted {
-        border: 0;
-        border-bottom: 1px dotted #ccc;
-        background: #999;
+        border-top: 1px dotted #8c8b8b;
         margin-top: 7%;
       }
       .hrDot{
@@ -135,10 +130,7 @@ $arial-font: Arial, Helvetica, sans-serif;
 @media #{$large}{
   body {
       hr.dotted {
-        border: 0;
-        border-bottom: 1px dotted #ccc;
-        background: #999;
-        margin-top: 7%;
+        border-top: 1px dotted #8c8b8b;
       }
       .hrDot{
         max-width: 80%;
@@ -146,10 +138,6 @@ $arial-font: Arial, Helvetica, sans-serif;
         margin-right: auto
       }
       hr.line {
-        width: 100%;
-        border: 0;
-        border-bottom: 1px #ccc;
-        background: #999;
         margin-top: 5px;
       }
       .topBar{
@@ -162,17 +150,26 @@ $arial-font: Arial, Helvetica, sans-serif;
       .headerDiv {
         font-size: 50px;
         font-weight: bold;
-        margin-left: 10%;
-        margin-right: 10px;
-        width: 50%;
+        margin-left: 1%;
+        // margin-right: 10px;
+        // width: 50%;
+      }
+      .header1{
+        font-size: 62px;
+        width: 425px;
       }
       .headerPDiv{
         font-size: 12px;
-        width: 50%;
+        height: 60px;
+        width: 295px;
         margin-right: 10%;
         padding-left: 10px;
         border-left: 1px grey;
         border-style: solid;
+      }
+      .headerP{
+        height: 60px;
+        width: 280px;
       }
       .row2{
         display: flex;
@@ -202,13 +199,14 @@ body{
     margin-right: auto;
   }
   hr.line {
+    width: 100%;
     border: 0;
     height: 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
   }
   .topBar{
     margin-bottom: 50px;
-    margin-top: 45px;
+    margin-top: 10px;
   }
   .headerDiv{
     font-size: 50px;
@@ -221,5 +219,23 @@ body{
     text-align: center;
     max-height: 100%;
     max-width: 100%;
+  }
+  img.uploadedImg{
+    max-height: 100%;
+    max-width: 100%;
+  }
+  .picHolder{
+    position: relative;
+    display: block;
+    height: 300px;
+    width: 285px;
+    margin-left: 2%;
+  }
+  .picPara{
+    display: block;
+    font-size: 14px;
+    text-align: left;
+    width: 300px;
+    word-wrap: break-word;
   }
 }

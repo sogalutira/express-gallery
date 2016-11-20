@@ -75,9 +75,6 @@ table {
   body hr.dotted {
     display: none; }
   body hr.line {
-    border: 0;
-    border-bottom: 1px #ccc;
-    background: #999;
     margin-top: 7%; }
   body .headerDiv {
     font-size: 50px;
@@ -135,9 +132,7 @@ table {
 
 @media (min-width: 600px) and (max-width: 900px) {
   hr.dotted {
-    border: 0;
-    border-bottom: 1px dotted #ccc;
-    background: #999;
+    border-top: 1px dotted #8c8b8b;
     margin-top: 7%; }
   .hrDot {
     max-width: 80%;
@@ -165,19 +160,12 @@ table {
 
 @media (min-width: 900px) {
   body hr.dotted {
-    border: 0;
-    border-bottom: 1px dotted #ccc;
-    background: #999;
-    margin-top: 7%; }
+    border-top: 1px dotted #8c8b8b; }
   body .hrDot {
     max-width: 80%;
     margin-left: auto;
     margin-right: auto; }
   body hr.line {
-    width: 100%;
-    border: 0;
-    border-bottom: 1px #ccc;
-    background: #999;
     margin-top: 5px; }
   body .topBar {
     box-sizing: border-box;
@@ -188,16 +176,21 @@ table {
   body .headerDiv {
     font-size: 50px;
     font-weight: bold;
-    margin-left: 10%;
-    margin-right: 10px;
-    width: 50%; }
+    margin-left: 1%; }
+  body .header1 {
+    font-size: 62px;
+    width: 425px; }
   body .headerPDiv {
     font-size: 12px;
-    width: 50%;
+    height: 60px;
+    width: 295px;
     margin-right: 10%;
     padding-left: 10px;
     border-left: 1px grey;
     border-style: solid; }
+  body .headerP {
+    height: 60px;
+    width: 280px; }
   body .row2 {
     display: flex;
     flex-flow: row wrap;
@@ -220,12 +213,13 @@ body {
     margin-left: auto;
     margin-right: auto; }
   body hr.line {
+    width: 100%;
     border: 0;
     height: 1px;
     background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.75), transparent); }
   body .topBar {
     margin-bottom: 50px;
-    margin-top: 45px; }
+    margin-top: 10px; }
   body .headerDiv {
     font-size: 50px;
     font-weight: bold;
@@ -236,3 +230,18 @@ body {
     text-align: center;
     max-height: 100%;
     max-width: 100%; }
+  body img.uploadedImg {
+    max-height: 100%;
+    max-width: 100%; }
+  body .picHolder {
+    position: relative;
+    display: block;
+    height: 300px;
+    width: 285px;
+    margin-left: 2%; }
+  body .picPara {
+    display: block;
+    font-size: 14px;
+    text-align: left;
+    width: 300px;
+    word-wrap: break-word; }
