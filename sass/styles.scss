@@ -60,6 +60,10 @@ body{
     margin-left: 10%;
     margin-right: 10px;
     max-width: 100%;
+    @media #{$small}{
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
   .headerPDiv{
     font-size: 12px;
@@ -158,14 +162,13 @@ body{
   .picHolder{
     position: relative;
     display: block;
+    max-height: 100%;
     @media #{$small}{
-      height: 300px;
       width: 285px;
       margin-left: auto;
       margin-right: auto;
     }
     @media #{$medium}{
-      max-height: 100%;
       max-width: 100%;
       margin-left: 2%;
     }

@@ -111,6 +111,10 @@ body {
     margin-left: 10%;
     margin-right: 10px;
     max-width: 100%; }
+    @media (min-width: 100px) and (max-width: 600px) {
+      body .headerDiv {
+        margin-left: auto;
+        margin-right: auto; } }
   body .headerPDiv {
     font-size: 12px;
     margin-right: 10%;
@@ -198,16 +202,15 @@ body {
     max-width: 100%; }
   body .picHolder {
     position: relative;
-    display: block; }
+    display: block;
+    max-height: 100%; }
     @media (min-width: 100px) and (max-width: 600px) {
       body .picHolder {
-        height: 300px;
         width: 285px;
         margin-left: auto;
         margin-right: auto; } }
     @media (min-width: 600px) and (max-width: 915px) {
       body .picHolder {
-        max-height: 100%;
         max-width: 100%;
         margin-left: 2%; } }
     @media (min-width: 915px) {
