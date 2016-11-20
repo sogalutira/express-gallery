@@ -6,8 +6,11 @@ html(lang="en")
     link(rel="stylesheet" type="text/css" href="/styles/styles.css")
   body
     div(class="mainContent")
-      div(class="loginButton")
-        button(type="submit" onclick='redirect()') Login
+      div(class="buttons")
+        div(class="addImg")
+          button(type="submit" onclick='newImg()') Add Photo
+        div(class="loginButton")
+          button(type="submit" onclick='redirect()') Login
       div(class="hrDot")
         hr(class="dotted")
       div(class="topBar")
@@ -37,3 +40,6 @@ html(lang="en")
 script.
   function redirect(){
     window.location="/login"}
+
+  function newImg(){
+    window.location="/gallery/new"}
