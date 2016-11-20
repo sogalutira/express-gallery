@@ -4,8 +4,8 @@
 $dark-color : #000000;
 
 $small: "(min-width: 100px) and (max-width: 600px)";
-$medium: "(min-width: 600px) and (max-width: 900px)";
-$large: "(min-width: 900px)";
+$medium: "(min-width: 600px) and (max-width: 915px)";
+$large: "(min-width: 915px)";
 
 $arial-font: Arial, Helvetica, sans-serif;
 
@@ -59,14 +59,17 @@ $arial-font: Arial, Helvetica, sans-serif;
       display: block;
       height: 300px;
       width: 285px;
-      margin-left: 2%;
+      margin-left: auto;
+      margin-right: auto;
     }
     .picPara{
       display: block;
       font-size: 14px;
       text-align: left;
-      width: 300px;
+      max-width: 100%;
       word-wrap: break-word;
+      margin-left: 2%;
+      margin-right: auto;
     }
     .authorP{
       color: white;
@@ -78,6 +81,13 @@ $arial-font: Arial, Helvetica, sans-serif;
       width: 100%;
       margin-top: -20px;
       z-index: 2;
+    }
+    .descriptP{
+      // margin-left: 2%;
+      word-wrap: break-word;
+    }
+    .urlP{
+      // margin-left: 2%;
     }
     .titleDiv{
       box-sizing: border-box;
@@ -94,101 +104,166 @@ $arial-font: Arial, Helvetica, sans-serif;
 }
 
 @media #{$medium}{
-      hr.dotted {
-        border-top: 1px dotted #8c8b8b;
-        margin-top: 7%;
-      }
-      .hrDot{
-        max-width: 80%;
-        margin-left: auto;
-        margin-right: auto
-      }
-      .topBar{
-        box-sizing: border-box;
-        display: flex;
-        flex-flow: row;
-        width: 100%;
-        margin-bottom: 80px;
-      }
-      .headerDiv {
-        font-size: 50px;
-        font-weight: bold;
-        margin-left: 10%;
-        margin-right: 10px;
-        width: 50%;
-      }
-      .headerPDiv{
-        font-size: 12px;
-        width: 50%;
-        margin-right: 10%;
-        padding-left: 10px;
-        border-left: 1px grey;
-        border-style: solid;
-      }
+  hr.dotted {
+    border-top: 1px dotted #8c8b8b;
+    margin-top: 7%;
+  }
+  .hrDot{
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto
+  }
+  .topBar{
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    margin-bottom: 80px;
+  }
+  .headerDiv {
+    font-size: 50px;
+    font-weight: bold;
+    margin-left: 10%;
+    margin-right: 10px;
+    width: 50%;
+  }
+  .headerPDiv{
+    font-size: 12px;
+    width: 50%;
+    margin-right: 10%;
+    padding-left: 10px;
+    border-left: 1px grey;
+    border-style: solid;
+  }
+  .row2{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    max-width: 915px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .rowPics{
+    box-sizing: border-box;
+    max-height: 90%;
+    max-width: 33%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .picHolder{
+    position: relative;
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+    margin-left: 2%;
+  }
+  .picPara{
+    display: block;
+    font-size: 14px;
+    text-align: left;
+    max-width: 100%;
+    word-wrap: break-word;
+    margin-left: 2%;
+  }
+  .authorP{
+    color: white;
+    text-align: right;
+    background-color: #2e3333;
+    opacity: 0.5;
+    position: absolute;
+    display: block;
+    width: 100%;
+    margin-top: -20px;
+    z-index: 2;
+  }
 }
 
 @media #{$large}{
   body {
-      hr.dotted {
-        border-top: 1px dotted #8c8b8b;
-      }
-      .hrDot{
-        max-width: 80%;
-        margin-left: auto;
-        margin-right: auto
-      }
-      hr.line {
-        margin-top: 5px;
-      }
-      .topBar{
-        box-sizing: border-box;
-        display: flex;
-        flex-flow: row;
-        width: 100%;
-        margin-bottom: 80px;
-        justify-content: center;
+    hr.dotted {
+      border-top: 1px dotted #8c8b8b;
+    }
+    .hrDot{
+      max-width: 80%;
+      margin-left: auto;
+      margin-right: auto
+    }
+    hr.line {
+      margin-top: 5px;
+    }
+    .topBar{
+      box-sizing: border-box;
+      display: flex;
+      flex-flow: row;
+      width: 100%;
+      margin-bottom: 80px;
+      justify-content: center;
 
-      }
-      .headerDiv {
-        font-size: 50px;
-        font-weight: bold;
-        margin-left: 10%;
-        // margin-right: 10px;
-        // width: 50%;
-      }
-      .header1{
-        font-size: 62px;
-        width: 425px;
-      }
-      .headerPDiv{
-        font-size: 12px;
-        height: 60px;
-        width: 295px;
-        margin-right: 10%;
-        padding-left: 10px;
-        border-left: 1px grey;
-        border-style: solid;
-      }
-      .headerP{
-        height: 60px;
-        width: 280px;
-      }
-      .row2{
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-around;
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .rowPics{
-        box-sizing: border-box;
-        max-height: 90%;
-        max-width: 300px;
-      }
-      .picPara{
-        max-width: 400px;
-      }
+    }
+    .headerDiv {
+      font-size: 50px;
+      font-weight: bold;
+      margin-left: 10%;
+      margin-right: 10px;
+      width: 50%;
+    }
+    .header1{
+      font-size: 62px;
+      width: 425px;
+    }
+    .headerPDiv{
+      font-size: 12px;
+      height: 60px;
+      width: 295px;
+      margin-right: 10%;
+      padding-left: 10px;
+      border-left: 1px grey;
+      border-style: solid;
+    }
+    .headerP{
+      height: 60px;
+      width: 280px;
+    }
+    .row2{
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .rowPics{
+      box-sizing: border-box;
+      max-height: 90%;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .picHolder{
+      position: relative;
+      display: block;
+      max-height: 100%;
+      width: 285px;
+      margin-left: 2%;
+    }
+    .picPara{
+      display: block;
+      font-size: 14px;
+      text-align: left;
+      max-width: 400px;
+      word-wrap: break-word;
+    }
+    .authorP{
+      color: white;
+      text-align: right;
+      background-color: #2e3333;
+      opacity: 0.5;
+      position: absolute;
+      display: block;
+      width: 100%;
+      margin-top: -20px;
+      z-index: 2;
+    }
   }
 }
 
@@ -205,6 +280,8 @@ body{
     border: 0;
     height: 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   .topBar{
     margin-bottom: 50px;
@@ -217,7 +294,7 @@ body{
   }
   .mainImg{
     align-items: center;
-    margin: 25px;
+    margin: 10px;
     text-align: center;
     max-height: 100%;
     max-width: 100%;
@@ -226,13 +303,13 @@ body{
     max-height: 100%;
     max-width: 100%;
   }
-  .picHolder{
-    position: relative;
-    display: block;
-    height: 300px;
-    width: 285px;
-    margin-left: 2%;
-  }
+  // .picHolder{
+  //   position: relative;
+  //   display: block;
+  //   height: 300px;
+  //   width: 285px;
+  //   margin-left: 2%;
+  // }
   .picPara{
     display: block;
     font-size: 14px;

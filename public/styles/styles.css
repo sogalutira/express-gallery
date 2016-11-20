@@ -103,13 +103,16 @@ table {
     display: block;
     height: 300px;
     width: 285px;
-    margin-left: 2%; }
+    margin-left: auto;
+    margin-right: auto; }
   body .picPara {
     display: block;
     font-size: 14px;
     text-align: left;
-    width: 300px;
-    word-wrap: break-word; }
+    max-width: 100%;
+    word-wrap: break-word;
+    margin-left: 2%;
+    margin-right: auto; }
   body .authorP {
     color: white;
     text-align: right;
@@ -120,6 +123,8 @@ table {
     width: 100%;
     margin-top: -20px;
     z-index: 2; }
+  body .descriptP {
+    word-wrap: break-word; }
   body .titleDiv {
     box-sizing: border-box;
     margin-bottom: 12px;
@@ -130,7 +135,7 @@ table {
     margin-top: 20px;
     font-size: 12px; } }
 
-@media (min-width: 600px) and (max-width: 900px) {
+@media (min-width: 600px) and (max-width: 915px) {
   hr.dotted {
     border-top: 1px dotted #8c8b8b;
     margin-top: 7%; }
@@ -156,9 +161,45 @@ table {
     margin-right: 10%;
     padding-left: 10px;
     border-left: 1px grey;
-    border-style: solid; } }
+    border-style: solid; }
+  .row2 {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    max-width: 915px;
+    margin-left: auto;
+    margin-right: auto; }
+  .rowPics {
+    box-sizing: border-box;
+    max-height: 90%;
+    max-width: 33%;
+    margin-left: auto;
+    margin-right: auto; }
+  .picHolder {
+    position: relative;
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+    margin-left: 2%; }
+  .picPara {
+    display: block;
+    font-size: 14px;
+    text-align: left;
+    max-width: 100%;
+    word-wrap: break-word;
+    margin-left: 2%; }
+  .authorP {
+    color: white;
+    text-align: right;
+    background-color: #2e3333;
+    opacity: 0.5;
+    position: absolute;
+    display: block;
+    width: 100%;
+    margin-top: -20px;
+    z-index: 2; } }
 
-@media (min-width: 900px) {
+@media (min-width: 915px) {
   body hr.dotted {
     border-top: 1px dotted #8c8b8b; }
   body .hrDot {
@@ -177,7 +218,9 @@ table {
   body .headerDiv {
     font-size: 50px;
     font-weight: bold;
-    margin-left: 10%; }
+    margin-left: 10%;
+    margin-right: 10px;
+    width: 50%; }
   body .header1 {
     font-size: 62px;
     width: 425px; }
@@ -202,9 +245,31 @@ table {
   body .rowPics {
     box-sizing: border-box;
     max-height: 90%;
-    max-width: 300px; }
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto; }
+  body .picHolder {
+    position: relative;
+    display: block;
+    max-height: 100%;
+    width: 285px;
+    margin-left: 2%; }
   body .picPara {
-    max-width: 400px; } }
+    display: block;
+    font-size: 14px;
+    text-align: left;
+    max-width: 400px;
+    word-wrap: break-word; }
+  body .authorP {
+    color: white;
+    text-align: right;
+    background-color: #2e3333;
+    opacity: 0.5;
+    position: absolute;
+    display: block;
+    width: 100%;
+    margin-top: -20px;
+    z-index: 2; } }
 
 body {
   color: gray;
@@ -217,7 +282,9 @@ body {
     width: 100%;
     border: 0;
     height: 1px;
-    background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.75), transparent); }
+    background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.75), transparent);
+    margin-top: 10px;
+    margin-bottom: 10px; }
   body .topBar {
     margin-bottom: 50px;
     margin-top: 10px; }
@@ -227,19 +294,13 @@ body {
     text-align: center; }
   body .mainImg {
     align-items: center;
-    margin: 25px;
+    margin: 10px;
     text-align: center;
     max-height: 100%;
     max-width: 100%; }
   body img.uploadedImg {
     max-height: 100%;
     max-width: 100%; }
-  body .picHolder {
-    position: relative;
-    display: block;
-    height: 300px;
-    width: 285px;
-    margin-left: 2%; }
   body .picPara {
     display: block;
     font-size: 14px;
