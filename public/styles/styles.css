@@ -105,7 +105,8 @@ table {
     position: relative;
     display: block;
     height: 300px;
-    width: 285px; }
+    width: 285px;
+    margin-left: 2%; }
   body .picPara {
     display: block;
     font-size: 14px;
