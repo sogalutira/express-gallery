@@ -4,7 +4,7 @@ var userObj = [];
 for(var i = 0; i < 8; i++){
   var userInfo = {
     username: faker.internet.userName(),
-    password: faker.internet.password(),
+    password: faker.internet.password(6),
     createdAt : new Date(),
     updatedAt : new Date()
   };
