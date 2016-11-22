@@ -5,14 +5,21 @@ html(lang="en")
   title Express Gallery
   link(rel="stylesheet" type="text/css" href="/styles/styles.css")
   body
-    p New photo
-      div(id="form")
-      form(name="input", action="/gallery", method="POST")
-        p Author
-        input(type="Text", name="author")
-        p URL
-        input(type="Text", name="url")
-        p Description
-        input(type="TextArea", name="description")
-        p
-        button(class="buttons" type="submit") Submit
+    div(class="mainContent")
+      div(class="topBar")
+        div(class="headerDiv")
+          h1(class="header1") _ARCHITEKT
+      div(class="formBox")
+        h2 Add New photo
+        form(name="input", action="/gallery", method="POST")
+          label Author
+            input(class="inputField" type="Text", name="author")
+          br
+          label URL
+            span(class="require")  - required
+            input(class="inputField" type="Text", name="url" required)
+          br
+          label Description
+            input(class="inputField" type="TextArea", name="description")
+          br
+          button(class="buttons" type="submit") Add Photo

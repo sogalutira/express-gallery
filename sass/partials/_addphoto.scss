@@ -3,3 +3,52 @@ $medium: "(min-width: 602px) and (max-width: 915px)";
 $large: "(min-width: 915px)";
 
 $arial-font: Arial, Helvetica, sans-serif;
+
+.formBox{
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  background: #FFFFFF;
+  color: darkslategray;
+  font-size: 14px;
+  margin: 50px auto;
+  width: 300px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+  -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+}
+.formBox h2{
+  background: #4D4D4D;
+  text-transform: uppercase;
+  color: ivory;
+  font-size: 16px;
+  font-weight: 100;
+  width: 100%;
+  padding: 20px;
+}
+.formBox form{
+  width: 100%;
+  padding: 25px;
+}
+.inputField{
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  background: transparent;
+  margin-bottom: 10px;
+  font-size: 16px;
+  height: 45px;
+}
+.require{
+  font-style: italic;
+  color: lightslategray;
+  font-size: 12px;
+}
