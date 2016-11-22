@@ -3,15 +3,16 @@ html(lang="en")
   head
    meta(charset="utf-8")
   title Express Gallery
+  link(rel="stylesheet" type="text/css" href="/styles/styles.css")
   body
     p New photo
-
-    form(name="input", action="/gallery", method="POST")
-      p Author
-      input(type="Text", name="author")
-      p URL
-      input(type="Text", name="url")
-      p Description
-      input(type="TextArea", name="description")
-      p
-      input(type="submit")
+      div(id="form")
+      form(name="input", action="/gallery", method="POST")
+        p Author
+        input(type="Text", name="author")
+        p URL
+        input(type="Text", name="url")
+        p Description
+        input(type="TextArea", name="description")
+        p
+        button(class="buttons" type="submit") Submit

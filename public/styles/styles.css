@@ -64,6 +64,59 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+div.imgContent {
+  box-sizing: border-box;
+  display: block;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 300px; }
+
+.titleContainer {
+  box-sizing: border-box;
+  margin-bottom: 15px; }
+
+.editContainer {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 8px; }
+
+.picContainer {
+  position: relative;
+  display: block;
+  max-height: 100%; }
+  @media (min-width: 100px) and (max-width: 601px) {
+    .picContainer {
+      width: 300px;
+      margin-left: auto;
+      margin-right: auto; } }
+  @media (min-width: 602px) and (max-width: 915px) {
+    .picContainer {
+      max-width: 100%;
+      margin-left: 2%; } }
+  @media (min-width: 915px) {
+    .picContainer {
+      width: 285px; } }
+
+p.authorBar {
+  color: white;
+  text-align: right;
+  background-color: #2e3333;
+  opacity: 0.5;
+  position: absolute;
+  display: block;
+  width: 100%;
+  margin-top: -20px;
+  z-index: 2; }
+
+div.descriptContainer {
+  box-sizing: border-box;
+  margin-top: 10px;
+  font-size: 12px; }
+
 body {
   color: gray;
   font-family: Arial, Helvetica, sans-serif;
@@ -71,11 +124,23 @@ body {
   body .mainContent {
     margin-left: auto;
     margin-right: auto; }
-  body .buttons {
+  body .buttonDiv {
     margin-top: 10px;
     margin-right: 20px;
     display: flex;
     justify-content: flex-end; }
+  body .buttons {
+    margin: 1px;
+    color: #7e8082;
+    background: transparent;
+    border-radius: 5px;
+    border: solid 2px #7e8082; }
+  body .buttons:hover {
+    border-color: #47484a;
+    color: #47484a; }
+  body buttons:active {
+    border-color: #5a5b5d;
+    color: #5a5b5d; }
   body hr.line {
     width: 100%;
     border: 0;
@@ -87,7 +152,7 @@ body {
     max-width: 80%;
     border-top: 1px dotted #8c8b8b;
     margin-top: 7%; }
-    @media (min-width: 100px) and (max-width: 600px) {
+    @media (min-width: 100px) and (max-width: 601px) {
       body hr.dotted {
         display: none; } }
   body .topBar {
@@ -97,7 +162,7 @@ body {
     display: flex;
     flex-flow: row;
     width: 100%; }
-    @media (min-width: 600px) and (max-width: 915px) {
+    @media (min-width: 602px) and (max-width: 915px) {
       body .topBar {
         margin-bottom: 80px;
         margin-top: 0px; } }
@@ -111,7 +176,7 @@ body {
     margin-left: 10%;
     margin-right: 10px;
     max-width: 100%; }
-    @media (min-width: 100px) and (max-width: 600px) {
+    @media (min-width: 100px) and (max-width: 601px) {
       body .headerDiv {
         margin-left: auto;
         margin-right: auto; } }
@@ -121,17 +186,17 @@ body {
     padding-left: 10px;
     border-left: 1px grey;
     border-style: solid; }
-    @media (min-width: 100px) and (max-width: 600px) {
+    @media (min-width: 100px) and (max-width: 601px) {
       body .headerPDiv {
         display: none; } }
-    @media (min-width: 600px) and (max-width: 915px) {
+    @media (min-width: 602px) and (max-width: 915px) {
       body .headerPDiv {
         max-width: 100%; } }
     @media (min-width: 915px) {
       body .headerPDiv {
         height: 60px;
         width: 295px; } }
-  @media (min-width: 600px) and (max-width: 915px) {
+  @media (min-width: 602px) and (max-width: 915px) {
     body .header1 {
       font-size: 52px;
       max-width: 100%; } }
@@ -153,18 +218,20 @@ body {
     max-height: 100%;
     max-width: 100%;
     margin-left: auto;
-    margin-right: auto; }
-    @media (min-width: 100px) and (max-width: 600px) {
+    margin-right: auto;
+    overflow: hidden;
+    position: relative; }
+    @media (min-width: 100px) and (max-width: 601px) {
       body .mainImg {
         max-height: 90%;
         max-width: 90%;
         box-sizing: border-box;
         align-items: center; } }
-  @media (min-width: 100px) and (max-width: 600px) {
+  @media (min-width: 100px) and (max-width: 601px) {
     body .row2 {
       margin-left: 35px;
       margin: 25px; } }
-  @media (min-width: 600px) and (max-width: 915px) {
+  @media (min-width: 602px) and (max-width: 915px) {
     body .row2 {
       display: flex;
       flex-flow: row wrap;
@@ -184,12 +251,12 @@ body {
     box-sizing: border-box;
     margin-left: auto;
     margin-right: auto; }
-    @media (min-width: 100px) and (max-width: 600px) {
+    @media (min-width: 100px) and (max-width: 601px) {
       body .rowPics {
         margin-bottom: 20px;
         margin-top: 20px;
         max-width: 300px; } }
-    @media (min-width: 600px) and (max-width: 915px) {
+    @media (min-width: 602px) and (max-width: 915px) {
       body .rowPics {
         max-height: 90%;
         max-width: 33%; } }
@@ -204,12 +271,12 @@ body {
     position: relative;
     display: block;
     max-height: 100%; }
-    @media (min-width: 100px) and (max-width: 600px) {
+    @media (min-width: 100px) and (max-width: 601px) {
       body .picHolder {
         width: 285px;
         margin-left: auto;
         margin-right: auto; } }
-    @media (min-width: 600px) and (max-width: 915px) {
+    @media (min-width: 602px) and (max-width: 915px) {
       body .picHolder {
         max-width: 100%;
         margin-left: 2%; } }
@@ -223,7 +290,7 @@ body {
     max-width: 100%;
     word-wrap: break-word;
     margin-left: 2%; }
-    @media (min-width: 100px) and (max-width: 600px) {
+    @media (min-width: 100px) and (max-width: 601px) {
       body .picPara {
         margin-right: auto; } }
     @media (min-width: 915px) {
@@ -239,15 +306,15 @@ body {
     width: 100%;
     margin-top: -20px;
     z-index: 2; }
-  @media (min-width: 100px) and (max-width: 600px) {
+  @media (min-width: 100px) and (max-width: 601px) {
     body .descriptP {
       word-wrap: break-word; } }
-  @media (min-width: 100px) and (max-width: 600px) {
+  @media (min-width: 100px) and (max-width: 601px) {
     body .titleDiv {
       box-sizing: border-box;
       margin-bottom: 12px;
       padding: 5px; } }
-  @media (min-width: 100px) and (max-width: 600px) {
+  @media (min-width: 100px) and (max-width: 601px) {
     body .descriptDiv {
       box-sizing: border-box;
       padding: 5px;
