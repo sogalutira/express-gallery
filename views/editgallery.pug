@@ -3,15 +3,28 @@ html(lang="en")
 head
   meta(charset="utf-8")
   title Express Gallery
+  link(rel="stylesheet" type="text/css" href="/styles/styles.css")
 body
-  p Edit Gallery
-  form(method="POST" action="/gallery/" + gallery.id enctype="application/x-www-form-urlencoded")
-    input(type="hidden" name="_method" value="PUT")
-    p Author
-    input(type="Text", name="author" value=gallery.author)
-    p URL
-    input(type="Text", name="url" value=gallery.url)
-    p Description
-    input(type="TextArea", name="description" value=gallery.description)
-    p
-    button(type="submit") Submit
+  div(class="mainContent")
+    div(class="hrDot")
+      hr(class="dotted")
+    div(class="topBar")
+      div(class="headerDiv")
+        h1(class="header1") _ARCHITEKT
+      div(class="headerPDiv")
+        p(class="headerP") Welcome to our online portfolio, we are small group of passionate designers and architects, looking to change and create amazing digital images to inspire others to follow in our innovative steps. Free Architect WordPress Theme
+    div(class="formBox")
+      h2 Edit Gallery Photo ##{gallery.id}
+      form(method="POST" action="/gallery/" + gallery.id enctype="application/x-www-form-urlencoded")
+        input(type="hidden" name="_method" value="PUT")
+        label Author
+          input(class="inputField" type="Text", name="author" value=gallery.author)
+        br
+        label URL
+          span(class="require")  - required
+          input(class="inputField" type="Text", name="url" value=gallery.url required)
+        br
+        label Description
+          input(class="inputField" type="TextArea", name="description" value=gallery.description)
+        br
+        button(class="buttons" type="submit") Edit Photo
