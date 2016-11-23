@@ -32,11 +32,11 @@ div.imgContent{
     margin-right: auto;
   }
   @media #{$medium}{
-    max-width: 100%;
+    width: 100%;
     margin-left: 2%;
   }
   @media #{$large}{
-    width: 285px;
+    width: 100%;
   }
 }
 p.authorBar{
