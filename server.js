@@ -125,7 +125,7 @@ app.post('/login',
 );
 
 app.get('/', function(req, res){
-  Gallery.findAll()
+  Gallery.findAll({order:'id ASC'})
   .then(function (Gallery){
     res.render('index', {Gallery: Gallery});
   });
@@ -139,14 +139,15 @@ app.get('/gallery/new', isAuthenticated, function(req, res){
   res.render('gallery');
 });
 
+
 app.get('/gallery/:id', function(req, res){
   Gallery.findOne({
     where: {
       id: req.params.id
     }
   })
-  .then(function (gallery){
-    res.render('singlegallery', {gallery: gallery});
+  .then(function (Gallery){
+    res.render('singlegallery', {gallery: Gallery});
   });
 });
 
@@ -160,7 +161,6 @@ app.get('/gallery/:id/edit', isAuthenticated, function(req, res){
       res.render('editgallery', {gallery: edit});
     });
 });
-
 
 app.post('/gallery', function(req, res, next){
   Gallery.create({
@@ -181,9 +181,10 @@ app.put('/gallery/:id', function(req, res){
   }, {
     where: {
       id: req.params.id
-    }} )
+    }
+  })
   .then(function(){
-     return Gallery.findOne({
+    return Gallery.findOne({
       where: {
         id: req.params.id
       }
