@@ -1,14 +1,45 @@
-<!DOCTYPE html>
+doctype html
 html(lang="en")
-head
-  meta(charset="utf-8")
-  title Express Gallery
-body
-  header
-  h1 Welcome to the gallery!
-  each galleryData in galleries
-    img(src = galleryData.url)
-    p Uploaded by: #{galleryData.author}
-    p Description: #{galleryData.description}
+  head
+    meta(charset="utf-8")
+    title Express Gallery
+    link(rel="stylesheet" type="text/css" href="/styles/styles.css")
+  body
+    div(class="mainContent")
+      div(class="buttonDiv")
+        div(class="addImg")
+          button(class="buttons" type="submit" onclick='newImg()') Add Photo
+        div(class="loginButton")
+          button(class="buttons" type="submit" onclick='redirect()') Login
+      div(class="hrDot")
+        hr(class="dotted")
+      div(class="topBar")
+        div(class="headerDiv")
+          h1(class="header1")
+            a(href="/gallery") _ARCHITEKT
+        div(class="headerPDiv")
+          p(class="headerP") Welcome to our online portfolio, we are small group of passionate designers and architects, looking to change and create amazing digital images to inspire others to follow in our innovative steps. Free Architect WordPress Theme
+      div(class="mainImg")
+        a(href="gallery/" + Gallery[0].id)
+          img(class="mainImage" src=Gallery[0].url)
+        hr(class="line")
+      div(class="row2")
+        -var pics = 1
+        while pics < Gallery.length
+          div(class="rowPics")
+            div(class="picHolder")
+              a(href="gallery/" + Gallery[pics].id)
+                img(class="uploadedImg" src=Gallery[pics].url)
+              span(class="authorP") #{Gallery[pics].author}
+            div(class="picPara")
+              span(class="descriptP") #{Gallery[pics].description} -
+              span(class="urlP") #{Gallery[pics].url}
+          if pics%3 === 0
+            hr(class="line")
+          -pics++
+script.
+  function redirect(){
+    window.location="/login"}
 
-
+  function newImg(){
+    window.location="/gallery/new"}

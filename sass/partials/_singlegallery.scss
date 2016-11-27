@@ -1,0 +1,62 @@
+$small: "(min-width: 100px) and (max-width: 601px)";
+$medium: "(min-width: 602px) and (max-width: 915px)";
+$large: "(min-width: 915px)";
+
+div.imgContent{
+  box-sizing: border-box;
+  display: block;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 300px;
+}
+.titleContainer{
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  word-wrap: break-word;
+}
+.editContainer{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 8px;
+}
+.picContainer{
+  position: relative;
+  display: block;
+  max-height: 100%;
+  @media #{$small}{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media #{$medium}{
+    width: 100%;
+    margin-left: 2%;
+  }
+  @media #{$large}{
+    width: 100%;
+  }
+}
+.upImg{
+  max-width: 100%;
+  max-height: 100%;
+}
+p.authorBar{
+  color: white;
+  text-align: right;
+  background-color: #2e3333;
+  opacity: 0.5;
+  position: absolute;
+  display: block;
+  width: 100%;
+  margin-top: -20px;
+  z-index: 2;
+}
+div.descriptContainer{
+  box-sizing: border-box;
+  margin-top: 10px;
+  font-size: 12px;
+}
