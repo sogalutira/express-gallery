@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 html(lang="en")
-head
-  meta(charset="utf-8")
-  title Express Gallery
-  link(rel="stylesheet" type="text/css" href="/styles/styles.css")
-body
-  div(class="mainContent")
-    div(class="topBar")
-      div(class="headerDiv")
-        h1(class="header1") _ARCHITEKT
-    div(class="imgContent")
-      div(class="titleContainer")
-        p(class="uploader") #{gallery.author} -
-        p #{gallery.url}
-      div(class="picContainer")
-        img(class="upImg" src = gallery.url)
-        p(class="authorBar") #{gallery.author}
-      div(class="descriptContainer")
-        p(class="description") #{gallery.description}
-      p
-      div(class="editContainer")
-        button(class="buttons" type="submit" onclick='editRedirect()') Edit
-        form(method="POST" action="/gallery/" + gallery.id enctype="application/x-www-form-urlencoded")
-          input(type="hidden" name="_method" value="DELETE")
-          p
-          button(class="buttons" type="submit") Delete
+  head
+    meta(charset="utf-8")
+    title Express Gallery
+    link(rel="stylesheet" type="text/css" href="/styles/styles.css")
+  body
+    div(class="mainContent")
+      div(class="hrDot")
+          hr(class="dotted")
+      div(class="topBar")
+        div(class="headerDiv")
+          h1(class="header1")
+            a(href="/gallery") _ARCHITEKT
+        div(class="headerPDiv")
+          p(class="headerP") Welcome to our online portfolio, we are small group of passionate designers and architects, looking to change and create amazing digital images to inspire others to follow in our innovative steps. Free Architect WordPress Theme
+      div(class="imgContent")
+        div(class="titleContainer")
+          p(class="uploader") #{gallery.author} - author
+          p #{gallery.url}
+        div(class="picContainer")
+          img(class="upImg" src=gallery.url)
+          p(class="authorBar") #{gallery.author}
+        div(class="descriptContainer")
+          p(class="description") #{gallery.description}
+        p
+        div(class="editContainer")
+          button(class="buttons" type="submit" onclick='editRedirect()') Edit
+          form(method="POST" action="/gallery/" + gallery.id enctype="application/x-www-form-urlencoded")
+            input(type="hidden" name="_method" value="DELETE")
+            p
+            button(class="buttons" type="submit") Delete
 script.
   function editRedirect(){
     window.location="/gallery/#{gallery.id}/edit"}
-  //- function deleteRedirect(){
-  //-   window.location="#{gallery.id}/delete"}
+  function deleteRedirect(){
+    window.location="#{gallery.id}/delete"}

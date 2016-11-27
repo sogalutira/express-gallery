@@ -14,6 +14,27 @@ body{
   font-family: $arial-font;
   text-align: left;
 
+  /* unvisited link */
+  a:link {
+    color: gray;
+    text-decoration: none;
+  }
+
+  /* visited link */
+  a:visited {
+    color: gray;
+  }
+
+  /* mouse over link */
+  a:hover {
+      color: #a0a0a0;
+  }
+
+  /* selected link */
+  a:active {
+    color: gray;
+  }
+
   .mainContent{
     margin-left: auto;
     margin-right: auto;
