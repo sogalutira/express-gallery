@@ -29,3 +29,7 @@ body
           input(class="inputField" type="TextArea", name="description" value=gallery.description)
         br
         button(class="buttons" type="submit") Edit Photo
+        button(class="buttons" type="submit" onclick="cancel()") Cancel
+script.
+  function cancel(){
+    window.location="/gallery"}
