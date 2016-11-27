@@ -75,7 +75,8 @@ div.imgContent {
 
 .titleContainer {
   box-sizing: border-box;
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  word-wrap: break-word; }
 
 .editContainer {
   display: flex;
@@ -100,6 +101,10 @@ div.imgContent {
   @media (min-width: 915px) {
     .picContainer {
       width: 100%; } }
+
+.upImg {
+  max-width: 100%;
+  max-height: 100%; }
 
 p.authorBar {
   color: white;
